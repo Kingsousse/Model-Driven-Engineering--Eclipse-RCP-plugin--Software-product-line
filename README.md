@@ -10,7 +10,30 @@ Extend featureIDE tool with a plug-in for Eclipse UML diagram sequences(Xtext, S
 #### Goal of the project
 Apply the LDP approach in behavioral model where variability is specified sequence diagrams.
 
-+ qsdqds
-+ qsdqsd
-+ qsdqds
++ Implementation a DSL technologies using Xtext
++ Implementation tools to parse and visualize sequence diagrams with SDedit
++ Implementing a bypass algorithm for code generation
++ Integration into the environment FeatureIDE
 
+#### Functional diagram
+
+![alt text](https://github.com/Kingsousse/Model-Driven-Engineering--Eclipse-RCP-plugin--Software-product-line/blob/master/screenshots/compilation.png "screen 1")
+
+#### Plugins dependencies eclipse
+
+![alt text](https://github.com/Kingsousse/Model-Driven-Engineering--Eclipse-RCP-plugin--Software-product-line/blob/master/screenshots/capt2.png "screen 1")
+
+![alt text](https://github.com/Kingsousse/Model-Driven-Engineering--Eclipse-RCP-plugin--Software-product-line/blob/master/screenshots/capt3.png "screen 1")
+
+#### Requirements
++ [Eclipse Helios]
++ [Quick Sequence Diagram Editor] (SDedit)
++ [xtext] 
++ [Java Runtime Environment 1.7.0.45] 
+
+
+
+[Eclipse Helios]:http://eclipse.org/helios/
+[Quick Sequence Diagram Editor]:http://sdedit.sourceforge.net/
+[xtext]:https://eclipse.org/Xtext/
+[Java Runtime Environment 1.7.0.45]:http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
