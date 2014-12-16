@@ -31,9 +31,13 @@ Apply the LDP approach in behavioral model where variability is specified sequen
 + [xtext] 
 + [Java Runtime Environment 1.7.0.45] 
 
-
+#### Documents  
++ [Report in frensh]
++ [Presentation ppt] 
 
 [Eclipse Helios]:http://eclipse.org/helios/
 [Quick Sequence Diagram Editor]:http://sdedit.sourceforge.net/
 [xtext]:https://eclipse.org/Xtext/
 [Java Runtime Environment 1.7.0.45]:http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
+[Report in frensh]:https://github.com/Kingsousse/Model-Driven-Engineering--Eclipse-RCP-plugin--Software-product-line/blob/master/rapport/RapportPsarMai2014Final.pdf
+[Presentation ppt]:https://github.com/Kingsousse/Model-Driven-Engineering--Eclipse-RCP-plugin--Software-product-line/blob/master/rapport/presentation.pdf
