@@ -1,0 +1,12 @@
+ihm:IHM[a]
+controller:Controller[a]
+displayPanel:Displaypanel[a]
+cardcontroller:CardController[a]
+mDB:MachineDB[a]
+
+
+ihm:controller.InsertProCard(card)
+controller:cardcontroller.HandleCardProDeposited(card)
+cardcontroller:cardcontroller.VerifieIfSupported()
+cardcontroller:mDB.ChekIDisMember(cardID)
+controller:displayPanel.Display(welcomeMessage)

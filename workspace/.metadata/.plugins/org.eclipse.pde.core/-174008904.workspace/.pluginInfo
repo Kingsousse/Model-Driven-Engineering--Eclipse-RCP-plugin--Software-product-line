@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="641" localization="OSGI-INF/l10n/bundle" name="featureSeqDiag.sdedit.sd_language.tests" project="featureSeqDiag.sdedit.sd_language.tests" provider="My Company"/>
+	<bundle bundleID="642" localization="OSGI-INF/l10n/bundle" name="featureSeqDiag.sdedit.sd_language" project="featureSeqDiag.sdedit.sd_language" provider="My Company"/>
+	<bundle bundleID="643" class="featureSeqDiag.sdedit.ui.internal.SD_languageActivator" localization="OSGI-INF/l10n/bundle" name="featureSeqDiag.sdedit.sd_language.ui" project="featureSeqDiag.sdedit.sd_language.ui" provider="My Company"/>
+	<bundle bundleID="644" class="featureseqdiag.FeatureSDCorePlugin" localization="OSGI-INF/l10n/bundle" name="FeatureSeqDiag" project="featureSeqDiag"/>
+	<bundle bundleID="645" class="featureSeqDiag.sdcombin.ui.internal.SDC_languageActivator" localization="OSGI-INF/l10n/bundle" name="featureSeqDiag.sdcombin.sdc_language.ui" project="featureSeqDiag.sdcombin.sdc_language.ui" provider="My Company"/>
+	<bundle bundleID="646" localization="OSGI-INF/l10n/bundle" name="featureSeqDiag.sdcombin.sdc_language" project="featureSeqDiag.sdcombin.sdc_language" provider="My Company"/>
+	<bundle bundleID="647" localization="OSGI-INF/l10n/bundle" name="featureSeqDiag.sdcombin.sdc_language.tests" project="featureSeqDiag.sdcombin.sdc_language.tests" provider="My Company"/>
+</map>

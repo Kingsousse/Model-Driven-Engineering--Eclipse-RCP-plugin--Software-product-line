@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FeatureSeqDiag
+Bundle-SymbolicName: featureSeqDiag;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.ui;bundle-version="3.105.0",
+ org.eclipse.core.runtime;bundle-version="3.9.0",
+ de.ovgu.featureide.core;bundle-version="2.6.6",
+ de.ovgu.featureide.fm.core;bundle-version="2.6.6",
+ org.eclipse.core.resources;bundle-version="3.8.100",
+ featureSeqDiag.sdcombin.sdc_language;bundle-version="1.0.0",
+ featureSeqDiag.sdcombin.sdc_language.ui;bundle-version="1.0.0",
+ featureSeqDiag.sdedit.sd_language;bundle-version="1.0.0",
+ featureSeqDiag.sdedit.sd_language.ui;bundle-version="1.0.0"
+Bundle-Activator: featureseqdiag.FeatureSDCorePlugin

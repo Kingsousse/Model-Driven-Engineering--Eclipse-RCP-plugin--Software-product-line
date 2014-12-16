@@ -1,0 +1,22 @@
+Features {
+	OS
+	Application
+	Call
+	Settings
+}
+
+Combination {
+	OS
+	loop ["While ISNOT OFF"] {
+		alt ["Settings IS selected"] {
+			Settings
+			else
+			alt ["Call IS selected"] {
+				Call
+				else
+				Application
+			}
+			
+		}
+	}
+}

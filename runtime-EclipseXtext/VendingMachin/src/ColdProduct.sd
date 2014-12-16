@@ -1,0 +1,4 @@
+prodController:ProductController[a]
+coldproductStack:ColdproductStack[a]
+
+prodController:coldproductStack.PopColdProduct(ID)

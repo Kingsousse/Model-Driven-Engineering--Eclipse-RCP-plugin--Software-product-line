@@ -1,0 +1,1857 @@
+package sdedit.parser.antlr.internal; 
+
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.parser.*;
+import org.eclipse.xtext.parser.impl.*;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
+import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
+import sdedit.services.SDELangGrammarAccess;
+
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
+
+@SuppressWarnings("all")
+public class InternalSDELangParser extends AbstractInternalAntlrParser {
+    public static final String[] tokenNames = new String[] {
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_SL_COMMENT", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':'", "'['", "'a'", "'p'", "'r'", "'x'", "']'", "'='", "'.'", "'('", "','", "')'", "'[c:alt'", "'--[else]'", "'[/c]'", "'[c:loop'", "'[c:opt'"
+    };
+    public static final int RULE_ID=4;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__21=21;
+    public static final int T__20=20;
+    public static final int RULE_SL_COMMENT=5;
+    public static final int EOF=-1;
+    public static final int RULE_ML_COMMENT=8;
+    public static final int T__19=19;
+    public static final int RULE_STRING=7;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__12=12;
+    public static final int T__11=11;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_INT=6;
+    public static final int RULE_WS=9;
+
+    // delegates
+    // delegators
+
+
+        public InternalSDELangParser(TokenStream input) {
+            this(input, new RecognizerSharedState());
+        }
+        public InternalSDELangParser(TokenStream input, RecognizerSharedState state) {
+            super(input, state);
+             
+        }
+        
+
+    public String[] getTokenNames() { return InternalSDELangParser.tokenNames; }
+    public String getGrammarFileName() { return "../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g"; }
+
+
+
+     	private SDELangGrammarAccess grammarAccess;
+     	
+        public InternalSDELangParser(TokenStream input, SDELangGrammarAccess grammarAccess) {
+            this(input);
+            this.grammarAccess = grammarAccess;
+            registerRules(grammarAccess.getGrammar());
+        }
+        
+        @Override
+        protected String getFirstRuleName() {
+        	return "SDEditModel";	
+       	}
+       	
+       	@Override
+       	protected SDELangGrammarAccess getGrammarAccess() {
+       		return grammarAccess;
+       	}
+
+
+
+    // $ANTLR start "entryRuleSDEditModel"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:67:1: entryRuleSDEditModel returns [EObject current=null] : iv_ruleSDEditModel= ruleSDEditModel EOF ;
+    public final EObject entryRuleSDEditModel() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSDEditModel = null;
+
+
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:68:2: (iv_ruleSDEditModel= ruleSDEditModel EOF )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:69:2: iv_ruleSDEditModel= ruleSDEditModel EOF
+            {
+             newCompositeNode(grammarAccess.getSDEditModelRule()); 
+            pushFollow(FOLLOW_ruleSDEditModel_in_entryRuleSDEditModel75);
+            iv_ruleSDEditModel=ruleSDEditModel();
+
+            state._fsp--;
+
+             current =iv_ruleSDEditModel; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSDEditModel85); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSDEditModel"
+
+
+    // $ANTLR start "ruleSDEditModel"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:76:1: ruleSDEditModel returns [EObject current=null] : ( ( (lv_elements_0_0= ruleSDEditObj ) )+ ( (lv_elements_1_0= ruleSDEditCombinableDiagElt ) )* ) ;
+    public final EObject ruleSDEditModel() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_elements_0_0 = null;
+
+        EObject lv_elements_1_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:79:28: ( ( ( (lv_elements_0_0= ruleSDEditObj ) )+ ( (lv_elements_1_0= ruleSDEditCombinableDiagElt ) )* ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:80:1: ( ( (lv_elements_0_0= ruleSDEditObj ) )+ ( (lv_elements_1_0= ruleSDEditCombinableDiagElt ) )* )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:80:1: ( ( (lv_elements_0_0= ruleSDEditObj ) )+ ( (lv_elements_1_0= ruleSDEditCombinableDiagElt ) )* )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:80:2: ( (lv_elements_0_0= ruleSDEditObj ) )+ ( (lv_elements_1_0= ruleSDEditCombinableDiagElt ) )*
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:80:2: ( (lv_elements_0_0= ruleSDEditObj ) )+
+            int cnt1=0;
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
+
+                if ( (LA1_0==RULE_ID) ) {
+                    int LA1_1 = input.LA(2);
+
+                    if ( (LA1_1==11) ) {
+                        int LA1_3 = input.LA(3);
+
+                        if ( (LA1_3==RULE_ID) ) {
+                            int LA1_4 = input.LA(4);
+
+                            if ( (LA1_4==EOF||LA1_4==RULE_ID||LA1_4==12||LA1_4==23||(LA1_4>=26 && LA1_4<=27)) ) {
+                                alt1=1;
+                            }
+
+
+                        }
+
+
+                    }
+
+
+                }
+
+
+                switch (alt1) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:81:1: (lv_elements_0_0= ruleSDEditObj )
+            	    {
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:81:1: (lv_elements_0_0= ruleSDEditObj )
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:82:3: lv_elements_0_0= ruleSDEditObj
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getSDEditModelAccess().getElementsSDEditObjParserRuleCall_0_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleSDEditObj_in_ruleSDEditModel131);
+            	    lv_elements_0_0=ruleSDEditObj();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getSDEditModelRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"elements",
+            	            		lv_elements_0_0, 
+            	            		"SDEditObj");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt1 >= 1 ) break loop1;
+                        EarlyExitException eee =
+                            new EarlyExitException(1, input);
+                        throw eee;
+                }
+                cnt1++;
+            } while (true);
+
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:98:3: ( (lv_elements_1_0= ruleSDEditCombinableDiagElt ) )*
+            loop2:
+            do {
+                int alt2=2;
+                int LA2_0 = input.LA(1);
+
+                if ( (LA2_0==RULE_ID||LA2_0==23||(LA2_0>=26 && LA2_0<=27)) ) {
+                    alt2=1;
+                }
+
+
+                switch (alt2) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:99:1: (lv_elements_1_0= ruleSDEditCombinableDiagElt )
+            	    {
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:99:1: (lv_elements_1_0= ruleSDEditCombinableDiagElt )
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:100:3: lv_elements_1_0= ruleSDEditCombinableDiagElt
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getSDEditModelAccess().getElementsSDEditCombinableDiagEltParserRuleCall_1_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditModel153);
+            	    lv_elements_1_0=ruleSDEditCombinableDiagElt();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getSDEditModelRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"elements",
+            	            		lv_elements_1_0, 
+            	            		"SDEditCombinableDiagElt");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSDEditModel"
+
+
+    // $ANTLR start "entryRuleSDEditObj"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:124:1: entryRuleSDEditObj returns [EObject current=null] : iv_ruleSDEditObj= ruleSDEditObj EOF ;
+    public final EObject entryRuleSDEditObj() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSDEditObj = null;
+
+
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:125:2: (iv_ruleSDEditObj= ruleSDEditObj EOF )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:126:2: iv_ruleSDEditObj= ruleSDEditObj EOF
+            {
+             newCompositeNode(grammarAccess.getSDEditObjRule()); 
+            pushFollow(FOLLOW_ruleSDEditObj_in_entryRuleSDEditObj190);
+            iv_ruleSDEditObj=ruleSDEditObj();
+
+            state._fsp--;
+
+             current =iv_ruleSDEditObj; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSDEditObj200); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSDEditObj"
+
+
+    // $ANTLR start "ruleSDEditObj"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:133:1: ruleSDEditObj returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= RULE_ID ) ) (otherlv_3= '[' (otherlv_4= 'a' | otherlv_5= 'p' | otherlv_6= 'r' | otherlv_7= 'x' ) otherlv_8= ']' )? ) ;
+    public final EObject ruleSDEditObj() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+        Token otherlv_1=null;
+        Token lv_type_2_0=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+
+         enterRule(); 
+            
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:136:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= RULE_ID ) ) (otherlv_3= '[' (otherlv_4= 'a' | otherlv_5= 'p' | otherlv_6= 'r' | otherlv_7= 'x' ) otherlv_8= ']' )? ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:137:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= RULE_ID ) ) (otherlv_3= '[' (otherlv_4= 'a' | otherlv_5= 'p' | otherlv_6= 'r' | otherlv_7= 'x' ) otherlv_8= ']' )? )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:137:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= RULE_ID ) ) (otherlv_3= '[' (otherlv_4= 'a' | otherlv_5= 'p' | otherlv_6= 'r' | otherlv_7= 'x' ) otherlv_8= ']' )? )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:137:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_type_2_0= RULE_ID ) ) (otherlv_3= '[' (otherlv_4= 'a' | otherlv_5= 'p' | otherlv_6= 'r' | otherlv_7= 'x' ) otherlv_8= ']' )?
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:137:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:138:1: (lv_name_0_0= RULE_ID )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:138:1: (lv_name_0_0= RULE_ID )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:139:3: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditObj242); 
+
+            			newLeafNode(lv_name_0_0, grammarAccess.getSDEditObjAccess().getNameIDTerminalRuleCall_0_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getSDEditObjRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_0_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleSDEditObj259); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getSDEditObjAccess().getColonKeyword_1());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:159:1: ( (lv_type_2_0= RULE_ID ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:160:1: (lv_type_2_0= RULE_ID )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:160:1: (lv_type_2_0= RULE_ID )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:161:3: lv_type_2_0= RULE_ID
+            {
+            lv_type_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditObj276); 
+
+            			newLeafNode(lv_type_2_0, grammarAccess.getSDEditObjAccess().getTypeIDTerminalRuleCall_2_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getSDEditObjRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"type",
+                    		lv_type_2_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:177:2: (otherlv_3= '[' (otherlv_4= 'a' | otherlv_5= 'p' | otherlv_6= 'r' | otherlv_7= 'x' ) otherlv_8= ']' )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0==12) ) {
+                alt4=1;
+            }
+            switch (alt4) {
+                case 1 :
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:177:4: otherlv_3= '[' (otherlv_4= 'a' | otherlv_5= 'p' | otherlv_6= 'r' | otherlv_7= 'x' ) otherlv_8= ']'
+                    {
+                    otherlv_3=(Token)match(input,12,FOLLOW_12_in_ruleSDEditObj294); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getSDEditObjAccess().getLeftSquareBracketKeyword_3_0());
+                        
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:181:1: (otherlv_4= 'a' | otherlv_5= 'p' | otherlv_6= 'r' | otherlv_7= 'x' )
+                    int alt3=4;
+                    switch ( input.LA(1) ) {
+                    case 13:
+                        {
+                        alt3=1;
+                        }
+                        break;
+                    case 14:
+                        {
+                        alt3=2;
+                        }
+                        break;
+                    case 15:
+                        {
+                        alt3=3;
+                        }
+                        break;
+                    case 16:
+                        {
+                        alt3=4;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 3, 0, input);
+
+                        throw nvae;
+                    }
+
+                    switch (alt3) {
+                        case 1 :
+                            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:181:3: otherlv_4= 'a'
+                            {
+                            otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleSDEditObj307); 
+
+                                	newLeafNode(otherlv_4, grammarAccess.getSDEditObjAccess().getAKeyword_3_1_0());
+                                
+
+                            }
+                            break;
+                        case 2 :
+                            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:186:7: otherlv_5= 'p'
+                            {
+                            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleSDEditObj325); 
+
+                                	newLeafNode(otherlv_5, grammarAccess.getSDEditObjAccess().getPKeyword_3_1_1());
+                                
+
+                            }
+                            break;
+                        case 3 :
+                            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:191:7: otherlv_6= 'r'
+                            {
+                            otherlv_6=(Token)match(input,15,FOLLOW_15_in_ruleSDEditObj343); 
+
+                                	newLeafNode(otherlv_6, grammarAccess.getSDEditObjAccess().getRKeyword_3_1_2());
+                                
+
+                            }
+                            break;
+                        case 4 :
+                            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:196:7: otherlv_7= 'x'
+                            {
+                            otherlv_7=(Token)match(input,16,FOLLOW_16_in_ruleSDEditObj361); 
+
+                                	newLeafNode(otherlv_7, grammarAccess.getSDEditObjAccess().getXKeyword_3_1_3());
+                                
+
+                            }
+                            break;
+
+                    }
+
+                    otherlv_8=(Token)match(input,17,FOLLOW_17_in_ruleSDEditObj374); 
+
+                        	newLeafNode(otherlv_8, grammarAccess.getSDEditObjAccess().getRightSquareBracketKeyword_3_2());
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSDEditObj"
+
+
+    // $ANTLR start "entryRuleSDEditCombinableDiagElt"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:212:1: entryRuleSDEditCombinableDiagElt returns [EObject current=null] : iv_ruleSDEditCombinableDiagElt= ruleSDEditCombinableDiagElt EOF ;
+    public final EObject entryRuleSDEditCombinableDiagElt() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSDEditCombinableDiagElt = null;
+
+
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:213:2: (iv_ruleSDEditCombinableDiagElt= ruleSDEditCombinableDiagElt EOF )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:214:2: iv_ruleSDEditCombinableDiagElt= ruleSDEditCombinableDiagElt EOF
+            {
+             newCompositeNode(grammarAccess.getSDEditCombinableDiagEltRule()); 
+            pushFollow(FOLLOW_ruleSDEditCombinableDiagElt_in_entryRuleSDEditCombinableDiagElt412);
+            iv_ruleSDEditCombinableDiagElt=ruleSDEditCombinableDiagElt();
+
+            state._fsp--;
+
+             current =iv_ruleSDEditCombinableDiagElt; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSDEditCombinableDiagElt422); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSDEditCombinableDiagElt"
+
+
+    // $ANTLR start "ruleSDEditCombinableDiagElt"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:221:1: ruleSDEditCombinableDiagElt returns [EObject current=null] : (this_SDEditCall_0= ruleSDEditCall | this_SDEditCombinedFragment_1= ruleSDEditCombinedFragment ) ;
+    public final EObject ruleSDEditCombinableDiagElt() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_SDEditCall_0 = null;
+
+        EObject this_SDEditCombinedFragment_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:224:28: ( (this_SDEditCall_0= ruleSDEditCall | this_SDEditCombinedFragment_1= ruleSDEditCombinedFragment ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:225:1: (this_SDEditCall_0= ruleSDEditCall | this_SDEditCombinedFragment_1= ruleSDEditCombinedFragment )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:225:1: (this_SDEditCall_0= ruleSDEditCall | this_SDEditCombinedFragment_1= ruleSDEditCombinedFragment )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==RULE_ID) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==23||(LA5_0>=26 && LA5_0<=27)) ) {
+                alt5=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:226:5: this_SDEditCall_0= ruleSDEditCall
+                    {
+                     
+                            newCompositeNode(grammarAccess.getSDEditCombinableDiagEltAccess().getSDEditCallParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleSDEditCall_in_ruleSDEditCombinableDiagElt469);
+                    this_SDEditCall_0=ruleSDEditCall();
+
+                    state._fsp--;
+
+                     
+                            current = this_SDEditCall_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:236:5: this_SDEditCombinedFragment_1= ruleSDEditCombinedFragment
+                    {
+                     
+                            newCompositeNode(grammarAccess.getSDEditCombinableDiagEltAccess().getSDEditCombinedFragmentParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleSDEditCombinedFragment_in_ruleSDEditCombinableDiagElt496);
+                    this_SDEditCombinedFragment_1=ruleSDEditCombinedFragment();
+
+                    state._fsp--;
+
+                     
+                            current = this_SDEditCombinedFragment_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSDEditCombinableDiagElt"
+
+
+    // $ANTLR start "entryRuleSDEditCall"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:252:1: entryRuleSDEditCall returns [EObject current=null] : iv_ruleSDEditCall= ruleSDEditCall EOF ;
+    public final EObject entryRuleSDEditCall() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSDEditCall = null;
+
+
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:253:2: (iv_ruleSDEditCall= ruleSDEditCall EOF )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:254:2: iv_ruleSDEditCall= ruleSDEditCall EOF
+            {
+             newCompositeNode(grammarAccess.getSDEditCallRule()); 
+            pushFollow(FOLLOW_ruleSDEditCall_in_entryRuleSDEditCall531);
+            iv_ruleSDEditCall=ruleSDEditCall();
+
+            state._fsp--;
+
+             current =iv_ruleSDEditCall; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSDEditCall541); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSDEditCall"
+
+
+    // $ANTLR start "ruleSDEditCall"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:261:1: ruleSDEditCall returns [EObject current=null] : ( ( (lv_caller_0_0= RULE_ID ) ) otherlv_1= ':' ( ( (lv_returnMessage_2_0= RULE_ID ) ) otherlv_3= '=' )? ( (lv_called_4_0= RULE_ID ) ) otherlv_5= '.' ( (lv_name_6_0= RULE_ID ) ) otherlv_7= '(' ( ( (lv_params_8_0= RULE_ID ) ) (otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) ) )* )? otherlv_11= ')' ) ;
+    public final EObject ruleSDEditCall() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_caller_0_0=null;
+        Token otherlv_1=null;
+        Token lv_returnMessage_2_0=null;
+        Token otherlv_3=null;
+        Token lv_called_4_0=null;
+        Token otherlv_5=null;
+        Token lv_name_6_0=null;
+        Token otherlv_7=null;
+        Token lv_params_8_0=null;
+        Token otherlv_9=null;
+        Token lv_params_10_0=null;
+        Token otherlv_11=null;
+
+         enterRule(); 
+            
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:264:28: ( ( ( (lv_caller_0_0= RULE_ID ) ) otherlv_1= ':' ( ( (lv_returnMessage_2_0= RULE_ID ) ) otherlv_3= '=' )? ( (lv_called_4_0= RULE_ID ) ) otherlv_5= '.' ( (lv_name_6_0= RULE_ID ) ) otherlv_7= '(' ( ( (lv_params_8_0= RULE_ID ) ) (otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) ) )* )? otherlv_11= ')' ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:265:1: ( ( (lv_caller_0_0= RULE_ID ) ) otherlv_1= ':' ( ( (lv_returnMessage_2_0= RULE_ID ) ) otherlv_3= '=' )? ( (lv_called_4_0= RULE_ID ) ) otherlv_5= '.' ( (lv_name_6_0= RULE_ID ) ) otherlv_7= '(' ( ( (lv_params_8_0= RULE_ID ) ) (otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) ) )* )? otherlv_11= ')' )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:265:1: ( ( (lv_caller_0_0= RULE_ID ) ) otherlv_1= ':' ( ( (lv_returnMessage_2_0= RULE_ID ) ) otherlv_3= '=' )? ( (lv_called_4_0= RULE_ID ) ) otherlv_5= '.' ( (lv_name_6_0= RULE_ID ) ) otherlv_7= '(' ( ( (lv_params_8_0= RULE_ID ) ) (otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) ) )* )? otherlv_11= ')' )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:265:2: ( (lv_caller_0_0= RULE_ID ) ) otherlv_1= ':' ( ( (lv_returnMessage_2_0= RULE_ID ) ) otherlv_3= '=' )? ( (lv_called_4_0= RULE_ID ) ) otherlv_5= '.' ( (lv_name_6_0= RULE_ID ) ) otherlv_7= '(' ( ( (lv_params_8_0= RULE_ID ) ) (otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) ) )* )? otherlv_11= ')'
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:265:2: ( (lv_caller_0_0= RULE_ID ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:266:1: (lv_caller_0_0= RULE_ID )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:266:1: (lv_caller_0_0= RULE_ID )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:267:3: lv_caller_0_0= RULE_ID
+            {
+            lv_caller_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditCall583); 
+
+            			newLeafNode(lv_caller_0_0, grammarAccess.getSDEditCallAccess().getCallerIDTerminalRuleCall_0_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getSDEditCallRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"caller",
+                    		lv_caller_0_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleSDEditCall600); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getSDEditCallAccess().getColonKeyword_1());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:287:1: ( ( (lv_returnMessage_2_0= RULE_ID ) ) otherlv_3= '=' )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==RULE_ID) ) {
+                int LA6_1 = input.LA(2);
+
+                if ( (LA6_1==18) ) {
+                    alt6=1;
+                }
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:287:2: ( (lv_returnMessage_2_0= RULE_ID ) ) otherlv_3= '='
+                    {
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:287:2: ( (lv_returnMessage_2_0= RULE_ID ) )
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:288:1: (lv_returnMessage_2_0= RULE_ID )
+                    {
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:288:1: (lv_returnMessage_2_0= RULE_ID )
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:289:3: lv_returnMessage_2_0= RULE_ID
+                    {
+                    lv_returnMessage_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditCall618); 
+
+                    			newLeafNode(lv_returnMessage_2_0, grammarAccess.getSDEditCallAccess().getReturnMessageIDTerminalRuleCall_2_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getSDEditCallRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"returnMessage",
+                            		lv_returnMessage_2_0, 
+                            		"ID");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleSDEditCall635); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getSDEditCallAccess().getEqualsSignKeyword_2_1());
+                        
+
+                    }
+                    break;
+
+            }
+
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:309:3: ( (lv_called_4_0= RULE_ID ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:310:1: (lv_called_4_0= RULE_ID )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:310:1: (lv_called_4_0= RULE_ID )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:311:3: lv_called_4_0= RULE_ID
+            {
+            lv_called_4_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditCall654); 
+
+            			newLeafNode(lv_called_4_0, grammarAccess.getSDEditCallAccess().getCalledIDTerminalRuleCall_3_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getSDEditCallRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"called",
+                    		lv_called_4_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,19,FOLLOW_19_in_ruleSDEditCall671); 
+
+                	newLeafNode(otherlv_5, grammarAccess.getSDEditCallAccess().getFullStopKeyword_4());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:331:1: ( (lv_name_6_0= RULE_ID ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:332:1: (lv_name_6_0= RULE_ID )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:332:1: (lv_name_6_0= RULE_ID )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:333:3: lv_name_6_0= RULE_ID
+            {
+            lv_name_6_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditCall688); 
+
+            			newLeafNode(lv_name_6_0, grammarAccess.getSDEditCallAccess().getNameIDTerminalRuleCall_5_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getSDEditCallRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_6_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleSDEditCall705); 
+
+                	newLeafNode(otherlv_7, grammarAccess.getSDEditCallAccess().getLeftParenthesisKeyword_6());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:353:1: ( ( (lv_params_8_0= RULE_ID ) ) (otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) ) )* )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==RULE_ID) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:353:2: ( (lv_params_8_0= RULE_ID ) ) (otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) ) )*
+                    {
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:353:2: ( (lv_params_8_0= RULE_ID ) )
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:354:1: (lv_params_8_0= RULE_ID )
+                    {
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:354:1: (lv_params_8_0= RULE_ID )
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:355:3: lv_params_8_0= RULE_ID
+                    {
+                    lv_params_8_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditCall723); 
+
+                    			newLeafNode(lv_params_8_0, grammarAccess.getSDEditCallAccess().getParamsIDTerminalRuleCall_7_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getSDEditCallRule());
+                    	        }
+                           		addWithLastConsumed(
+                           			current, 
+                           			"params",
+                            		lv_params_8_0, 
+                            		"ID");
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:371:2: (otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) ) )*
+                    loop7:
+                    do {
+                        int alt7=2;
+                        int LA7_0 = input.LA(1);
+
+                        if ( (LA7_0==21) ) {
+                            alt7=1;
+                        }
+
+
+                        switch (alt7) {
+                    	case 1 :
+                    	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:371:4: otherlv_9= ',' ( (lv_params_10_0= RULE_ID ) )
+                    	    {
+                    	    otherlv_9=(Token)match(input,21,FOLLOW_21_in_ruleSDEditCall741); 
+
+                    	        	newLeafNode(otherlv_9, grammarAccess.getSDEditCallAccess().getCommaKeyword_7_1_0());
+                    	        
+                    	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:375:1: ( (lv_params_10_0= RULE_ID ) )
+                    	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:376:1: (lv_params_10_0= RULE_ID )
+                    	    {
+                    	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:376:1: (lv_params_10_0= RULE_ID )
+                    	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:377:3: lv_params_10_0= RULE_ID
+                    	    {
+                    	    lv_params_10_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditCall758); 
+
+                    	    			newLeafNode(lv_params_10_0, grammarAccess.getSDEditCallAccess().getParamsIDTerminalRuleCall_7_1_1_0()); 
+                    	    		
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElement(grammarAccess.getSDEditCallRule());
+                    	    	        }
+                    	           		addWithLastConsumed(
+                    	           			current, 
+                    	           			"params",
+                    	            		lv_params_10_0, 
+                    	            		"ID");
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop7;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_11=(Token)match(input,22,FOLLOW_22_in_ruleSDEditCall779); 
+
+                	newLeafNode(otherlv_11, grammarAccess.getSDEditCallAccess().getRightParenthesisKeyword_8());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSDEditCall"
+
+
+    // $ANTLR start "entryRuleSDEditCombinedFragment"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:405:1: entryRuleSDEditCombinedFragment returns [EObject current=null] : iv_ruleSDEditCombinedFragment= ruleSDEditCombinedFragment EOF ;
+    public final EObject entryRuleSDEditCombinedFragment() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSDEditCombinedFragment = null;
+
+
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:406:2: (iv_ruleSDEditCombinedFragment= ruleSDEditCombinedFragment EOF )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:407:2: iv_ruleSDEditCombinedFragment= ruleSDEditCombinedFragment EOF
+            {
+             newCompositeNode(grammarAccess.getSDEditCombinedFragmentRule()); 
+            pushFollow(FOLLOW_ruleSDEditCombinedFragment_in_entryRuleSDEditCombinedFragment815);
+            iv_ruleSDEditCombinedFragment=ruleSDEditCombinedFragment();
+
+            state._fsp--;
+
+             current =iv_ruleSDEditCombinedFragment; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSDEditCombinedFragment825); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSDEditCombinedFragment"
+
+
+    // $ANTLR start "ruleSDEditCombinedFragment"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:414:1: ruleSDEditCombinedFragment returns [EObject current=null] : (this_SDEditAlt_0= ruleSDEditAlt | this_SDEditLoop_1= ruleSDEditLoop | this_SDEditOpt_2= ruleSDEditOpt ) ;
+    public final EObject ruleSDEditCombinedFragment() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_SDEditAlt_0 = null;
+
+        EObject this_SDEditLoop_1 = null;
+
+        EObject this_SDEditOpt_2 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:417:28: ( (this_SDEditAlt_0= ruleSDEditAlt | this_SDEditLoop_1= ruleSDEditLoop | this_SDEditOpt_2= ruleSDEditOpt ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:418:1: (this_SDEditAlt_0= ruleSDEditAlt | this_SDEditLoop_1= ruleSDEditLoop | this_SDEditOpt_2= ruleSDEditOpt )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:418:1: (this_SDEditAlt_0= ruleSDEditAlt | this_SDEditLoop_1= ruleSDEditLoop | this_SDEditOpt_2= ruleSDEditOpt )
+            int alt9=3;
+            switch ( input.LA(1) ) {
+            case 23:
+                {
+                alt9=1;
+                }
+                break;
+            case 26:
+                {
+                alt9=2;
+                }
+                break;
+            case 27:
+                {
+                alt9=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt9) {
+                case 1 :
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:419:5: this_SDEditAlt_0= ruleSDEditAlt
+                    {
+                     
+                            newCompositeNode(grammarAccess.getSDEditCombinedFragmentAccess().getSDEditAltParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleSDEditAlt_in_ruleSDEditCombinedFragment872);
+                    this_SDEditAlt_0=ruleSDEditAlt();
+
+                    state._fsp--;
+
+                     
+                            current = this_SDEditAlt_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:429:5: this_SDEditLoop_1= ruleSDEditLoop
+                    {
+                     
+                            newCompositeNode(grammarAccess.getSDEditCombinedFragmentAccess().getSDEditLoopParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleSDEditLoop_in_ruleSDEditCombinedFragment899);
+                    this_SDEditLoop_1=ruleSDEditLoop();
+
+                    state._fsp--;
+
+                     
+                            current = this_SDEditLoop_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:439:5: this_SDEditOpt_2= ruleSDEditOpt
+                    {
+                     
+                            newCompositeNode(grammarAccess.getSDEditCombinedFragmentAccess().getSDEditOptParserRuleCall_2()); 
+                        
+                    pushFollow(FOLLOW_ruleSDEditOpt_in_ruleSDEditCombinedFragment926);
+                    this_SDEditOpt_2=ruleSDEditOpt();
+
+                    state._fsp--;
+
+                     
+                            current = this_SDEditOpt_2; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSDEditCombinedFragment"
+
+
+    // $ANTLR start "entryRuleSDEditAlt"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:455:1: entryRuleSDEditAlt returns [EObject current=null] : iv_ruleSDEditAlt= ruleSDEditAlt EOF ;
+    public final EObject entryRuleSDEditAlt() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSDEditAlt = null;
+
+
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:456:2: (iv_ruleSDEditAlt= ruleSDEditAlt EOF )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:457:2: iv_ruleSDEditAlt= ruleSDEditAlt EOF
+            {
+             newCompositeNode(grammarAccess.getSDEditAltRule()); 
+            pushFollow(FOLLOW_ruleSDEditAlt_in_entryRuleSDEditAlt961);
+            iv_ruleSDEditAlt=ruleSDEditAlt();
+
+            state._fsp--;
+
+             current =iv_ruleSDEditAlt; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSDEditAlt971); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSDEditAlt"
+
+
+    // $ANTLR start "ruleSDEditAlt"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:464:1: ruleSDEditAlt returns [EObject current=null] : (otherlv_0= '[c:alt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_conseq_3_0= ruleSDEditCombinableDiagElt ) )+ (otherlv_4= '--[else]' ( (lv_alters_5_0= ruleSDEditCombinableDiagElt ) )+ )+ otherlv_6= '[/c]' ) ;
+    public final EObject ruleSDEditAlt() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_condComment_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        EObject lv_conseq_3_0 = null;
+
+        EObject lv_alters_5_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:467:28: ( (otherlv_0= '[c:alt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_conseq_3_0= ruleSDEditCombinableDiagElt ) )+ (otherlv_4= '--[else]' ( (lv_alters_5_0= ruleSDEditCombinableDiagElt ) )+ )+ otherlv_6= '[/c]' ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:468:1: (otherlv_0= '[c:alt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_conseq_3_0= ruleSDEditCombinableDiagElt ) )+ (otherlv_4= '--[else]' ( (lv_alters_5_0= ruleSDEditCombinableDiagElt ) )+ )+ otherlv_6= '[/c]' )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:468:1: (otherlv_0= '[c:alt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_conseq_3_0= ruleSDEditCombinableDiagElt ) )+ (otherlv_4= '--[else]' ( (lv_alters_5_0= ruleSDEditCombinableDiagElt ) )+ )+ otherlv_6= '[/c]' )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:468:3: otherlv_0= '[c:alt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_conseq_3_0= ruleSDEditCombinableDiagElt ) )+ (otherlv_4= '--[else]' ( (lv_alters_5_0= ruleSDEditCombinableDiagElt ) )+ )+ otherlv_6= '[/c]'
+            {
+            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleSDEditAlt1008); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getSDEditAltAccess().getCAltKeyword_0());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:472:1: ( (lv_condComment_1_0= RULE_ID ) )+
+            int cnt10=0;
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
+
+                if ( (LA10_0==RULE_ID) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:473:1: (lv_condComment_1_0= RULE_ID )
+            	    {
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:473:1: (lv_condComment_1_0= RULE_ID )
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:474:3: lv_condComment_1_0= RULE_ID
+            	    {
+            	    lv_condComment_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditAlt1025); 
+
+            	    			newLeafNode(lv_condComment_1_0, grammarAccess.getSDEditAltAccess().getCondCommentIDTerminalRuleCall_1_0()); 
+            	    		
+
+            	    	        if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getSDEditAltRule());
+            	    	        }
+            	           		addWithLastConsumed(
+            	           			current, 
+            	           			"condComment",
+            	            		lv_condComment_1_0, 
+            	            		"ID");
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt10 >= 1 ) break loop10;
+                        EarlyExitException eee =
+                            new EarlyExitException(10, input);
+                        throw eee;
+                }
+                cnt10++;
+            } while (true);
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleSDEditAlt1043); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getSDEditAltAccess().getRightSquareBracketKeyword_2());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:494:1: ( (lv_conseq_3_0= ruleSDEditCombinableDiagElt ) )+
+            int cnt11=0;
+            loop11:
+            do {
+                int alt11=2;
+                int LA11_0 = input.LA(1);
+
+                if ( (LA11_0==RULE_ID||LA11_0==23||(LA11_0>=26 && LA11_0<=27)) ) {
+                    alt11=1;
+                }
+
+
+                switch (alt11) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:495:1: (lv_conseq_3_0= ruleSDEditCombinableDiagElt )
+            	    {
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:495:1: (lv_conseq_3_0= ruleSDEditCombinableDiagElt )
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:496:3: lv_conseq_3_0= ruleSDEditCombinableDiagElt
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getSDEditAltAccess().getConseqSDEditCombinableDiagEltParserRuleCall_3_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditAlt1064);
+            	    lv_conseq_3_0=ruleSDEditCombinableDiagElt();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getSDEditAltRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"conseq",
+            	            		lv_conseq_3_0, 
+            	            		"SDEditCombinableDiagElt");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt11 >= 1 ) break loop11;
+                        EarlyExitException eee =
+                            new EarlyExitException(11, input);
+                        throw eee;
+                }
+                cnt11++;
+            } while (true);
+
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:512:3: (otherlv_4= '--[else]' ( (lv_alters_5_0= ruleSDEditCombinableDiagElt ) )+ )+
+            int cnt13=0;
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( (LA13_0==24) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:512:5: otherlv_4= '--[else]' ( (lv_alters_5_0= ruleSDEditCombinableDiagElt ) )+
+            	    {
+            	    otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleSDEditAlt1078); 
+
+            	        	newLeafNode(otherlv_4, grammarAccess.getSDEditAltAccess().getElseKeyword_4_0());
+            	        
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:516:1: ( (lv_alters_5_0= ruleSDEditCombinableDiagElt ) )+
+            	    int cnt12=0;
+            	    loop12:
+            	    do {
+            	        int alt12=2;
+            	        int LA12_0 = input.LA(1);
+
+            	        if ( (LA12_0==RULE_ID||LA12_0==23||(LA12_0>=26 && LA12_0<=27)) ) {
+            	            alt12=1;
+            	        }
+
+
+            	        switch (alt12) {
+            	    	case 1 :
+            	    	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:517:1: (lv_alters_5_0= ruleSDEditCombinableDiagElt )
+            	    	    {
+            	    	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:517:1: (lv_alters_5_0= ruleSDEditCombinableDiagElt )
+            	    	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:518:3: lv_alters_5_0= ruleSDEditCombinableDiagElt
+            	    	    {
+            	    	     
+            	    	    	        newCompositeNode(grammarAccess.getSDEditAltAccess().getAltersSDEditCombinableDiagEltParserRuleCall_4_1_0()); 
+            	    	    	    
+            	    	    pushFollow(FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditAlt1099);
+            	    	    lv_alters_5_0=ruleSDEditCombinableDiagElt();
+
+            	    	    state._fsp--;
+
+
+            	    	    	        if (current==null) {
+            	    	    	            current = createModelElementForParent(grammarAccess.getSDEditAltRule());
+            	    	    	        }
+            	    	           		add(
+            	    	           			current, 
+            	    	           			"alters",
+            	    	            		lv_alters_5_0, 
+            	    	            		"SDEditCombinableDiagElt");
+            	    	    	        afterParserOrEnumRuleCall();
+            	    	    	    
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    if ( cnt12 >= 1 ) break loop12;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(12, input);
+            	                throw eee;
+            	        }
+            	        cnt12++;
+            	    } while (true);
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt13 >= 1 ) break loop13;
+                        EarlyExitException eee =
+                            new EarlyExitException(13, input);
+                        throw eee;
+                }
+                cnt13++;
+            } while (true);
+
+            otherlv_6=(Token)match(input,25,FOLLOW_25_in_ruleSDEditAlt1114); 
+
+                	newLeafNode(otherlv_6, grammarAccess.getSDEditAltAccess().getCKeyword_5());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSDEditAlt"
+
+
+    // $ANTLR start "entryRuleSDEditLoop"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:546:1: entryRuleSDEditLoop returns [EObject current=null] : iv_ruleSDEditLoop= ruleSDEditLoop EOF ;
+    public final EObject entryRuleSDEditLoop() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSDEditLoop = null;
+
+
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:547:2: (iv_ruleSDEditLoop= ruleSDEditLoop EOF )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:548:2: iv_ruleSDEditLoop= ruleSDEditLoop EOF
+            {
+             newCompositeNode(grammarAccess.getSDEditLoopRule()); 
+            pushFollow(FOLLOW_ruleSDEditLoop_in_entryRuleSDEditLoop1150);
+            iv_ruleSDEditLoop=ruleSDEditLoop();
+
+            state._fsp--;
+
+             current =iv_ruleSDEditLoop; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSDEditLoop1160); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSDEditLoop"
+
+
+    // $ANTLR start "ruleSDEditLoop"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:555:1: ruleSDEditLoop returns [EObject current=null] : (otherlv_0= '[c:loop' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_body_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]' ) ;
+    public final EObject ruleSDEditLoop() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_condComment_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_body_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:558:28: ( (otherlv_0= '[c:loop' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_body_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]' ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:559:1: (otherlv_0= '[c:loop' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_body_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]' )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:559:1: (otherlv_0= '[c:loop' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_body_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]' )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:559:3: otherlv_0= '[c:loop' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_body_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]'
+            {
+            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleSDEditLoop1197); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getSDEditLoopAccess().getCLoopKeyword_0());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:563:1: ( (lv_condComment_1_0= RULE_ID ) )+
+            int cnt14=0;
+            loop14:
+            do {
+                int alt14=2;
+                int LA14_0 = input.LA(1);
+
+                if ( (LA14_0==RULE_ID) ) {
+                    alt14=1;
+                }
+
+
+                switch (alt14) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:564:1: (lv_condComment_1_0= RULE_ID )
+            	    {
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:564:1: (lv_condComment_1_0= RULE_ID )
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:565:3: lv_condComment_1_0= RULE_ID
+            	    {
+            	    lv_condComment_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditLoop1214); 
+
+            	    			newLeafNode(lv_condComment_1_0, grammarAccess.getSDEditLoopAccess().getCondCommentIDTerminalRuleCall_1_0()); 
+            	    		
+
+            	    	        if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getSDEditLoopRule());
+            	    	        }
+            	           		addWithLastConsumed(
+            	           			current, 
+            	           			"condComment",
+            	            		lv_condComment_1_0, 
+            	            		"ID");
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt14 >= 1 ) break loop14;
+                        EarlyExitException eee =
+                            new EarlyExitException(14, input);
+                        throw eee;
+                }
+                cnt14++;
+            } while (true);
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleSDEditLoop1232); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getSDEditLoopAccess().getRightSquareBracketKeyword_2());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:585:1: ( (lv_body_3_0= ruleSDEditCombinableDiagElt ) )+
+            int cnt15=0;
+            loop15:
+            do {
+                int alt15=2;
+                int LA15_0 = input.LA(1);
+
+                if ( (LA15_0==RULE_ID||LA15_0==23||(LA15_0>=26 && LA15_0<=27)) ) {
+                    alt15=1;
+                }
+
+
+                switch (alt15) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:586:1: (lv_body_3_0= ruleSDEditCombinableDiagElt )
+            	    {
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:586:1: (lv_body_3_0= ruleSDEditCombinableDiagElt )
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:587:3: lv_body_3_0= ruleSDEditCombinableDiagElt
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getSDEditLoopAccess().getBodySDEditCombinableDiagEltParserRuleCall_3_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditLoop1253);
+            	    lv_body_3_0=ruleSDEditCombinableDiagElt();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getSDEditLoopRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"body",
+            	            		lv_body_3_0, 
+            	            		"SDEditCombinableDiagElt");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt15 >= 1 ) break loop15;
+                        EarlyExitException eee =
+                            new EarlyExitException(15, input);
+                        throw eee;
+                }
+                cnt15++;
+            } while (true);
+
+            otherlv_4=(Token)match(input,25,FOLLOW_25_in_ruleSDEditLoop1266); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getSDEditLoopAccess().getCKeyword_4());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSDEditLoop"
+
+
+    // $ANTLR start "entryRuleSDEditOpt"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:615:1: entryRuleSDEditOpt returns [EObject current=null] : iv_ruleSDEditOpt= ruleSDEditOpt EOF ;
+    public final EObject entryRuleSDEditOpt() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSDEditOpt = null;
+
+
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:616:2: (iv_ruleSDEditOpt= ruleSDEditOpt EOF )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:617:2: iv_ruleSDEditOpt= ruleSDEditOpt EOF
+            {
+             newCompositeNode(grammarAccess.getSDEditOptRule()); 
+            pushFollow(FOLLOW_ruleSDEditOpt_in_entryRuleSDEditOpt1302);
+            iv_ruleSDEditOpt=ruleSDEditOpt();
+
+            state._fsp--;
+
+             current =iv_ruleSDEditOpt; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSDEditOpt1312); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSDEditOpt"
+
+
+    // $ANTLR start "ruleSDEditOpt"
+    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:624:1: ruleSDEditOpt returns [EObject current=null] : (otherlv_0= '[c:opt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_opts_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]' ) ;
+    public final EObject ruleSDEditOpt() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_condComment_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_opts_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:627:28: ( (otherlv_0= '[c:opt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_opts_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]' ) )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:628:1: (otherlv_0= '[c:opt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_opts_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]' )
+            {
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:628:1: (otherlv_0= '[c:opt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_opts_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]' )
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:628:3: otherlv_0= '[c:opt' ( (lv_condComment_1_0= RULE_ID ) )+ otherlv_2= ']' ( (lv_opts_3_0= ruleSDEditCombinableDiagElt ) )+ otherlv_4= '[/c]'
+            {
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleSDEditOpt1349); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getSDEditOptAccess().getCOptKeyword_0());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:632:1: ( (lv_condComment_1_0= RULE_ID ) )+
+            int cnt16=0;
+            loop16:
+            do {
+                int alt16=2;
+                int LA16_0 = input.LA(1);
+
+                if ( (LA16_0==RULE_ID) ) {
+                    alt16=1;
+                }
+
+
+                switch (alt16) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:633:1: (lv_condComment_1_0= RULE_ID )
+            	    {
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:633:1: (lv_condComment_1_0= RULE_ID )
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:634:3: lv_condComment_1_0= RULE_ID
+            	    {
+            	    lv_condComment_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSDEditOpt1366); 
+
+            	    			newLeafNode(lv_condComment_1_0, grammarAccess.getSDEditOptAccess().getCondCommentIDTerminalRuleCall_1_0()); 
+            	    		
+
+            	    	        if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getSDEditOptRule());
+            	    	        }
+            	           		addWithLastConsumed(
+            	           			current, 
+            	           			"condComment",
+            	            		lv_condComment_1_0, 
+            	            		"ID");
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt16 >= 1 ) break loop16;
+                        EarlyExitException eee =
+                            new EarlyExitException(16, input);
+                        throw eee;
+                }
+                cnt16++;
+            } while (true);
+
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleSDEditOpt1384); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getSDEditOptAccess().getRightSquareBracketKeyword_2());
+                
+            // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:654:1: ( (lv_opts_3_0= ruleSDEditCombinableDiagElt ) )+
+            int cnt17=0;
+            loop17:
+            do {
+                int alt17=2;
+                int LA17_0 = input.LA(1);
+
+                if ( (LA17_0==RULE_ID||LA17_0==23||(LA17_0>=26 && LA17_0<=27)) ) {
+                    alt17=1;
+                }
+
+
+                switch (alt17) {
+            	case 1 :
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:655:1: (lv_opts_3_0= ruleSDEditCombinableDiagElt )
+            	    {
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:655:1: (lv_opts_3_0= ruleSDEditCombinableDiagElt )
+            	    // ../sdedit.sde_language/src-gen/sdedit/parser/antlr/internal/InternalSDELang.g:656:3: lv_opts_3_0= ruleSDEditCombinableDiagElt
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getSDEditOptAccess().getOptsSDEditCombinableDiagEltParserRuleCall_3_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditOpt1405);
+            	    lv_opts_3_0=ruleSDEditCombinableDiagElt();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getSDEditOptRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"opts",
+            	            		lv_opts_3_0, 
+            	            		"SDEditCombinableDiagElt");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt17 >= 1 ) break loop17;
+                        EarlyExitException eee =
+                            new EarlyExitException(17, input);
+                        throw eee;
+                }
+                cnt17++;
+            } while (true);
+
+            otherlv_4=(Token)match(input,25,FOLLOW_25_in_ruleSDEditOpt1418); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getSDEditOptAccess().getCKeyword_4());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSDEditOpt"
+
+    // Delegated rules
+
+
+ 
+
+    public static final BitSet FOLLOW_ruleSDEditModel_in_entryRuleSDEditModel75 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSDEditModel85 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditObj_in_ruleSDEditModel131 = new BitSet(new long[]{0x000000000C800012L});
+    public static final BitSet FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditModel153 = new BitSet(new long[]{0x000000000C800012L});
+    public static final BitSet FOLLOW_ruleSDEditObj_in_entryRuleSDEditObj190 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSDEditObj200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditObj242 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_ruleSDEditObj259 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditObj276 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_12_in_ruleSDEditObj294 = new BitSet(new long[]{0x000000000001E000L});
+    public static final BitSet FOLLOW_13_in_ruleSDEditObj307 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_14_in_ruleSDEditObj325 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_15_in_ruleSDEditObj343 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_16_in_ruleSDEditObj361 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleSDEditObj374 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditCombinableDiagElt_in_entryRuleSDEditCombinableDiagElt412 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSDEditCombinableDiagElt422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditCall_in_ruleSDEditCombinableDiagElt469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditCombinedFragment_in_ruleSDEditCombinableDiagElt496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditCall_in_entryRuleSDEditCall531 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSDEditCall541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditCall583 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_ruleSDEditCall600 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditCall618 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleSDEditCall635 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditCall654 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleSDEditCall671 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditCall688 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleSDEditCall705 = new BitSet(new long[]{0x0000000000400010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditCall723 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_21_in_ruleSDEditCall741 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditCall758 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_22_in_ruleSDEditCall779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditCombinedFragment_in_entryRuleSDEditCombinedFragment815 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSDEditCombinedFragment825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditAlt_in_ruleSDEditCombinedFragment872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditLoop_in_ruleSDEditCombinedFragment899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditOpt_in_ruleSDEditCombinedFragment926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditAlt_in_entryRuleSDEditAlt961 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSDEditAlt971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleSDEditAlt1008 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditAlt1025 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_17_in_ruleSDEditAlt1043 = new BitSet(new long[]{0x000000000C800010L});
+    public static final BitSet FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditAlt1064 = new BitSet(new long[]{0x000000000D800010L});
+    public static final BitSet FOLLOW_24_in_ruleSDEditAlt1078 = new BitSet(new long[]{0x000000000C800010L});
+    public static final BitSet FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditAlt1099 = new BitSet(new long[]{0x000000000F800010L});
+    public static final BitSet FOLLOW_25_in_ruleSDEditAlt1114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditLoop_in_entryRuleSDEditLoop1150 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSDEditLoop1160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleSDEditLoop1197 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditLoop1214 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_17_in_ruleSDEditLoop1232 = new BitSet(new long[]{0x000000000C800010L});
+    public static final BitSet FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditLoop1253 = new BitSet(new long[]{0x000000000E800010L});
+    public static final BitSet FOLLOW_25_in_ruleSDEditLoop1266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSDEditOpt_in_entryRuleSDEditOpt1302 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSDEditOpt1312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleSDEditOpt1349 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSDEditOpt1366 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_17_in_ruleSDEditOpt1384 = new BitSet(new long[]{0x000000000C800010L});
+    public static final BitSet FOLLOW_ruleSDEditCombinableDiagElt_in_ruleSDEditOpt1405 = new BitSet(new long[]{0x000000000E800010L});
+    public static final BitSet FOLLOW_25_in_ruleSDEditOpt1418 = new BitSet(new long[]{0x0000000000000002L});
+
+}

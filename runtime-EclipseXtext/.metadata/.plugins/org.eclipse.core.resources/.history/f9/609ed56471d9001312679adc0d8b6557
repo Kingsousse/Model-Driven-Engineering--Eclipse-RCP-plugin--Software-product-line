@@ -1,0 +1,8 @@
+customer:Actor
+ihm:IHM[a]
+controller:Controller[a]
+mDB:MachineDB[a]
+
+customer:ihm.startBuying()
+ihm:controller.EntryPassword(password)
+controller:mDB.VerifiePassword(password)

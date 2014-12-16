@@ -1,0 +1,37 @@
+Features {
+ProCard
+Password
+Help
+Pieces
+CreditCard
+CancelProcess
+Coffee
+Tea
+ColdProduct
+}
+
+Combination {
+ProCard
+ seq 
+Password
+loop [" while UserDesire == TRUE "] {
+Pieces
+ seq 
+CreditCard
+opt ["Help IS True"] {
+Help
+
+}
+alt ["CancelProcess  == True"] {
+CancelProcess
+ else 
+Coffee
+ seq 
+Tea
+ seq 
+ColdProduct
+
+}
+
+}
+}

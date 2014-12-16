@@ -1,0 +1,15 @@
+package featureSeqDiag.sdedit.runner;
+
+public class SdRunner {
+
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

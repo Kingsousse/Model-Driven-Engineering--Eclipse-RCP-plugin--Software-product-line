@@ -1,0 +1,27 @@
+User:user 
+PhoneKeypad:phonekeypad
+PhoneSpeaker:phonespeaker 
+PhoneDisplay:phonedisplay
+Phone:phone
+Network:network
+
+User:=PhoneKeypad.DialNumber(number)
+PhoneKeypad:=Phone.InputNumber()
+Phone:=PhoneDisplay.DisplayNumber()
+Phone:=PhoneSpeaker.Beep()
+User:=PhoneKeypad.PushSend(phonenumber)
+PhoneKeypad:=Phone.InputDialledNumber(phonenumber)
+Phone:=Phone.ProcessCall(phonenumber)
+Phone:=PhoneDisplay.DisplayMessage()
+[c:alt]
+	User:=PhoneKeypad.PushEnd()
+	PhoneKeypad:=Phone.InputEndCall()
+--[else]
+Phone:=Network.SendCallInfo()
+Network:=Phone.SendMessage()
+Phone:=PhoneDisplay.DisplayMessage()
+User:=PhoneKeypad.PushEnd()
+PhoneKeypad:=Phone.InputEndCall()
+[/c]
+
+

@@ -1,0 +1,36 @@
+Features {
+	Authentification
+	Help
+	PayingProcess
+	CancelProcess
+	ChossingProduct	
+}
+
+Combination {
+
+	Authentification
+	loop [" while UserDesire == TRUE "] {
+		alt ["CancelProcess  == True"] {
+			opt ["Help IS True"] {
+				Help	
+			}
+			CancelProcess
+		
+			else
+			ChossingProduct
+		}
+		PayingProcess	
+		
+		alt ["CancelProcess  == True"] {
+			opt ["Help IS True"] {
+				Help	
+			}
+			CancelProcess
+		
+			else
+			ChossingProduct
+		}
+
+	}
+
+}

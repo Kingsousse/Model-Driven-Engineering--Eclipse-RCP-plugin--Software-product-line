@@ -1,0 +1,6 @@
+ihm:IHM[a]
+controller:Controller[a]
+displayPanel:Displaypanel[a]
+
+ihm:controller.HelpSession()
+controller:displayPanel.Display(Help)

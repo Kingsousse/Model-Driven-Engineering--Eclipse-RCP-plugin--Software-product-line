@@ -1,0 +1,12 @@
+User:user 
+PhoneKeypad:phonekeypad
+PhoneSpeaker:phonespeaker 
+PhoneDisplay:phonedisplay
+Phone:phone
+PhoneMemory:phonememory
+
+
+User:PhoneKeypad.PushSelect(SettingsIsSelected)
+PhoneKeypad:Phone.InputPushSelect(SettingsIsSelected)
+Phone:SettingsList=PhoneMemory.SettingsList()
+Phone:PhoneDisplay.Display(SettingsList)

@@ -1,0 +1,18 @@
+
+ihm:IHM[a]
+controller:Controller[a]
+coinController:Coincontroller[a] 
+coinsStack:CoinsStack[a]
+coldproductStack:ColdproductStack[a]
+
+[c:loop while InsertCoins == True ] 
+			ihm:controller.InsertCoins(coin)
+			controller:Amount=coinController.HandleCoinsDeposited(Price,Amount)
+			coinController:coinsStack.verifieIfSupported()
+	
+			[c:alt Coins == supported]
+     			          coinController:OK=coinsStack.Add(coin)
+    		 		 --[else]
+    				coinController:coinController.discard(coin)
+			[/c]
+[/c]

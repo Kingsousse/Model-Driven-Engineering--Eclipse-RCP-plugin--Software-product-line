@@ -1,0 +1,31 @@
+User:user 
+PhoneKeypad:phonekeypad
+PhoneSpeaker:phonespeaker 
+PhoneDisplay:phonedisplay
+Phone:phone
+PhoneMemoryCard:phonememorycard
+Cam:Cam
+
+
+User:PhoneKeypad.PushSelect(AppCamIsSelected)
+PhoneKeypad:Phone.InputPushSelect(AppCamIsSelected)
+Phone:Cam.CamActivate()
+[c:alt Cam is OK]
+Cam:Phone.CamIsReady()
+Phone:PhoneDisplay.CamDisplay()
+User:PhoneKeypad.PushCamBot()
+PhoneKeypad:Phone.InputPushCamBot()
+Phone:Picture=Cam.GetPic()
+Phone:PhoneMemoryCard.StorePic(Picture)
+[c:alt if memory exist]
+PhoneMemoryCard:PhoneMemoryCard.Store(Picture)
+--[else]
+PhoneMemoryCard:ErrorMessage=Phone.ErrorMessage(ErrorMessage)
+Phone:PhoneDisplay.DisplayError()
+
+[/c]
+
+--[else]
+PhoneMemoryCard:ErrorMessage=Phone.ErrorMessage(ErrorMessage)
+Phone:PhoneDisplay.DisplayError()
+[/c]

@@ -1,0 +1,23 @@
+Features {
+	cancel
+	paiement
+	boisson
+	
+}
+
+Combination {
+	alt ["cond1"] {
+		 boisson 
+		 seq 
+		 boisson 
+		else 
+		paiement 
+	} 
+	seq 
+	cancel 
+	loop ["cond2"] { 
+		paiement 
+		seq 
+		cancel
+	}
+}

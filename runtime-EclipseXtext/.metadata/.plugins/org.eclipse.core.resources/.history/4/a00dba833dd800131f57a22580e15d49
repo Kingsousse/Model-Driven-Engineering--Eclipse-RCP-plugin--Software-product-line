@@ -1,0 +1,5 @@
+
+ihm:controller.ChooseProduct(IDproduct)
+controller:ProductAvailable=mDB.CheckProductAvailability(IDproduct)
+controller:displayPanel.Display(Price,PreparingProd)
+controller:prodController.DispenseProduct(ID)

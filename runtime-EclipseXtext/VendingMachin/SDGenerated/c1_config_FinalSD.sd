@@ -1,0 +1,45 @@
+prodController:ProductController[a]
+coffeeMachine:Coffemachine[a] 
+ihm:IHM[a]
+controller:Controller[a]
+displayPanel:Displaypanel[a]
+coldproductStack:ColdproductStack[a]
+teaMachine:Teamachine[a] 
+mDB:MachineDB[a]
+cardcontroller:CardController[a]
+
+[c:alt ProCard]
+ihm:controller.InsertProCard(card)
+controller:cardcontroller.HandleCardProDeposited(card)
+cardcontroller:cardcontroller.VerifieIfSupported()
+cardcontroller:mDB.ChekIDisMember(cardID)
+controller:displayPanel.Display(welcomeMessage)
+ --[else]
+ihm:controller.EntryPassword(password)
+controller:mDB.VerifiePassword(password)
+[/c]
+[c:opt Help == True]
+ihm:controller.HelpSession()
+controller:displayPanel.Display(Help)
+[/c]
+[c:loop  while UserDesire == TRUE ]
+controller:displayPanel.Display(Free)
+[c:alt CancelProcess  == True]
+ihm:Amount=controller.Cancel()
+controller:displayPanel.Display(Cancel)
+ --[else]
+ihm:controller.ChooseProduct(IDproduct)
+controller:ProductAvailable=mDB.CheckProductAvailability(IDproduct)
+controller:displayPanel.Display(Price,PreparingProd)
+controller:prodController.DispenseProduct(ID)
+[c:alt Coffee]
+prodController:CoffeeCup=coffeeMachine.PrepareCoffee(ID)
+ --[else]
+[c:alt Tea]
+prodController:TeaCup=teaMachine.PrepareTea()
+ --[else]
+prodController:coldproductStack.PopColdProduct(ID)
+[/c]
+[/c]
+[/c]
+[/c]

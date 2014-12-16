@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.ovgu.featureide.core.composers">
+      <composer
+            class="featureseqdiag.FeatureSDComposer"
+            description="tootooo"
+            id="featureSeqDiag.composer"
+            name="Feature SeqDiag"
+            nature="featureIDE Composer for Sequence Diagramme">
+      </composer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="featureSeqDiag.SDeditViewer"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="featureSeqDiag.menu1"
+               label="SD Viewer"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="featureseqdiag.SDeditViewer"
+               id="featureSeqDiag.actionSDeditViewer"
+               label="SDedit"
+               menubarPath="featureSeqDiag.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

@@ -1,0 +1,161 @@
+/**
+ */
+package sdedit.sDELang.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+
+import sdedit.sDELang.SDELangPackage;
+import sdedit.sDELang.SDEditCombinedFragment;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>SD Edit Combined Fragment</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link sdedit.sDELang.impl.SDEditCombinedFragmentImpl#getCondComment <em>Cond Comment</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class SDEditCombinedFragmentImpl extends SDEditCombinableDiagEltImpl implements SDEditCombinedFragment
+{
+  /**
+   * The cached value of the '{@link #getCondComment() <em>Cond Comment</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondComment()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> condComment;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected SDEditCombinedFragmentImpl()
+  {
+    super();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass()
+  {
+    return SDELangPackage.Literals.SD_EDIT_COMBINED_FRAGMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getCondComment()
+  {
+    if (condComment == null)
+    {
+      condComment = new EDataTypeEList<String>(String.class, this, SDELangPackage.SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT);
+    }
+    return condComment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SDELangPackage.SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT:
+        return getCondComment();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SDELangPackage.SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT:
+        getCondComment().clear();
+        getCondComment().addAll((Collection<? extends String>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SDELangPackage.SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT:
+        getCondComment().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SDELangPackage.SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT:
+        return condComment != null && !condComment.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (condComment: ");
+    result.append(condComment);
+    result.append(')');
+    return result.toString();
+  }
+
+} //SDEditCombinedFragmentImpl

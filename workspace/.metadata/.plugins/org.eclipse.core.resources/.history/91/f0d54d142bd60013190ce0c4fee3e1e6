@@ -1,0 +1,9 @@
+grammar sdcombin.SDCLang with org.eclipse.xtext.common.Terminals
+
+generate sDCLang "http://www.SDCLang.sdcombin"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

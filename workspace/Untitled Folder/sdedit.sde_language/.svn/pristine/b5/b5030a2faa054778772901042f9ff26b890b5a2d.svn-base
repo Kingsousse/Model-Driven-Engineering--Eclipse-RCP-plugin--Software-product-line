@@ -1,0 +1,788 @@
+/**
+ */
+package sdedit.sDELang;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
+ * <ul>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
+ * </ul>
+ * <!-- end-user-doc -->
+ * @see sdedit.sDELang.SDELangFactory
+ * @model kind="package"
+ * @generated
+ */
+public interface SDELangPackage extends EPackage
+{
+  /**
+   * The package name.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  String eNAME = "sDELang";
+
+  /**
+   * The package namespace URI.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  String eNS_URI = "http://www.SDELang.sdedit";
+
+  /**
+   * The package namespace name.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  String eNS_PREFIX = "sDELang";
+
+  /**
+   * The singleton instance of the package.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  SDELangPackage eINSTANCE = sdedit.sDELang.impl.SDELangPackageImpl.init();
+
+  /**
+   * The meta object id for the '{@link sdedit.sDELang.impl.SDEditModelImpl <em>SD Edit Model</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see sdedit.sDELang.impl.SDEditModelImpl
+   * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditModel()
+   * @generated
+   */
+  int SD_EDIT_MODEL = 0;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_MODEL__ELEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>SD Edit Model</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_MODEL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link sdedit.sDELang.impl.SDEditObjImpl <em>SD Edit Obj</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see sdedit.sDELang.impl.SDEditObjImpl
+   * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditObj()
+   * @generated
+   */
+  int SD_EDIT_OBJ = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_OBJ__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_OBJ__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>SD Edit Obj</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_OBJ_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link sdedit.sDELang.impl.SDEditCombinableDiagEltImpl <em>SD Edit Combinable Diag Elt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see sdedit.sDELang.impl.SDEditCombinableDiagEltImpl
+   * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditCombinableDiagElt()
+   * @generated
+   */
+  int SD_EDIT_COMBINABLE_DIAG_ELT = 2;
+
+  /**
+   * The number of structural features of the '<em>SD Edit Combinable Diag Elt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link sdedit.sDELang.impl.SDEditCallImpl <em>SD Edit Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see sdedit.sDELang.impl.SDEditCallImpl
+   * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditCall()
+   * @generated
+   */
+  int SD_EDIT_CALL = 3;
+
+  /**
+   * The feature id for the '<em><b>Caller</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_CALL__CALLER = SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Return Message</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_CALL__RETURN_MESSAGE = SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Called</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_CALL__CALLED = SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_CALL__NAME = SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_CALL__PARAMS = SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>SD Edit Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_CALL_FEATURE_COUNT = SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link sdedit.sDELang.impl.SDEditCombinedFragmentImpl <em>SD Edit Combined Fragment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see sdedit.sDELang.impl.SDEditCombinedFragmentImpl
+   * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditCombinedFragment()
+   * @generated
+   */
+  int SD_EDIT_COMBINED_FRAGMENT = 4;
+
+  /**
+   * The feature id for the '<em><b>Cond Comment</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT = SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SD Edit Combined Fragment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_COMBINED_FRAGMENT_FEATURE_COUNT = SD_EDIT_COMBINABLE_DIAG_ELT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link sdedit.sDELang.impl.SDEditAltImpl <em>SD Edit Alt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see sdedit.sDELang.impl.SDEditAltImpl
+   * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditAlt()
+   * @generated
+   */
+  int SD_EDIT_ALT = 5;
+
+  /**
+   * The feature id for the '<em><b>Cond Comment</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_ALT__COND_COMMENT = SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Conseq</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_ALT__CONSEQ = SD_EDIT_COMBINED_FRAGMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Alters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_ALT__ALTERS = SD_EDIT_COMBINED_FRAGMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>SD Edit Alt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_ALT_FEATURE_COUNT = SD_EDIT_COMBINED_FRAGMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link sdedit.sDELang.impl.SDEditLoopImpl <em>SD Edit Loop</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see sdedit.sDELang.impl.SDEditLoopImpl
+   * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditLoop()
+   * @generated
+   */
+  int SD_EDIT_LOOP = 6;
+
+  /**
+   * The feature id for the '<em><b>Cond Comment</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_LOOP__COND_COMMENT = SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_LOOP__BODY = SD_EDIT_COMBINED_FRAGMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SD Edit Loop</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_LOOP_FEATURE_COUNT = SD_EDIT_COMBINED_FRAGMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link sdedit.sDELang.impl.SDEditOptImpl <em>SD Edit Opt</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see sdedit.sDELang.impl.SDEditOptImpl
+   * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditOpt()
+   * @generated
+   */
+  int SD_EDIT_OPT = 7;
+
+  /**
+   * The feature id for the '<em><b>Cond Comment</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_OPT__COND_COMMENT = SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Opts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_OPT__OPTS = SD_EDIT_COMBINED_FRAGMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SD Edit Opt</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SD_EDIT_OPT_FEATURE_COUNT = SD_EDIT_COMBINED_FRAGMENT_FEATURE_COUNT + 1;
+
+
+  /**
+   * Returns the meta object for class '{@link sdedit.sDELang.SDEditModel <em>SD Edit Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SD Edit Model</em>'.
+   * @see sdedit.sDELang.SDEditModel
+   * @generated
+   */
+  EClass getSDEditModel();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link sdedit.sDELang.SDEditModel#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see sdedit.sDELang.SDEditModel#getElements()
+   * @see #getSDEditModel()
+   * @generated
+   */
+  EReference getSDEditModel_Elements();
+
+  /**
+   * Returns the meta object for class '{@link sdedit.sDELang.SDEditObj <em>SD Edit Obj</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SD Edit Obj</em>'.
+   * @see sdedit.sDELang.SDEditObj
+   * @generated
+   */
+  EClass getSDEditObj();
+
+  /**
+   * Returns the meta object for the attribute '{@link sdedit.sDELang.SDEditObj#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see sdedit.sDELang.SDEditObj#getName()
+   * @see #getSDEditObj()
+   * @generated
+   */
+  EAttribute getSDEditObj_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link sdedit.sDELang.SDEditObj#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see sdedit.sDELang.SDEditObj#getType()
+   * @see #getSDEditObj()
+   * @generated
+   */
+  EAttribute getSDEditObj_Type();
+
+  /**
+   * Returns the meta object for class '{@link sdedit.sDELang.SDEditCombinableDiagElt <em>SD Edit Combinable Diag Elt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SD Edit Combinable Diag Elt</em>'.
+   * @see sdedit.sDELang.SDEditCombinableDiagElt
+   * @generated
+   */
+  EClass getSDEditCombinableDiagElt();
+
+  /**
+   * Returns the meta object for class '{@link sdedit.sDELang.SDEditCall <em>SD Edit Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SD Edit Call</em>'.
+   * @see sdedit.sDELang.SDEditCall
+   * @generated
+   */
+  EClass getSDEditCall();
+
+  /**
+   * Returns the meta object for the attribute '{@link sdedit.sDELang.SDEditCall#getCaller <em>Caller</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Caller</em>'.
+   * @see sdedit.sDELang.SDEditCall#getCaller()
+   * @see #getSDEditCall()
+   * @generated
+   */
+  EAttribute getSDEditCall_Caller();
+
+  /**
+   * Returns the meta object for the attribute '{@link sdedit.sDELang.SDEditCall#getReturnMessage <em>Return Message</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Return Message</em>'.
+   * @see sdedit.sDELang.SDEditCall#getReturnMessage()
+   * @see #getSDEditCall()
+   * @generated
+   */
+  EAttribute getSDEditCall_ReturnMessage();
+
+  /**
+   * Returns the meta object for the attribute '{@link sdedit.sDELang.SDEditCall#getCalled <em>Called</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Called</em>'.
+   * @see sdedit.sDELang.SDEditCall#getCalled()
+   * @see #getSDEditCall()
+   * @generated
+   */
+  EAttribute getSDEditCall_Called();
+
+  /**
+   * Returns the meta object for the attribute '{@link sdedit.sDELang.SDEditCall#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see sdedit.sDELang.SDEditCall#getName()
+   * @see #getSDEditCall()
+   * @generated
+   */
+  EAttribute getSDEditCall_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link sdedit.sDELang.SDEditCall#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Params</em>'.
+   * @see sdedit.sDELang.SDEditCall#getParams()
+   * @see #getSDEditCall()
+   * @generated
+   */
+  EAttribute getSDEditCall_Params();
+
+  /**
+   * Returns the meta object for class '{@link sdedit.sDELang.SDEditCombinedFragment <em>SD Edit Combined Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SD Edit Combined Fragment</em>'.
+   * @see sdedit.sDELang.SDEditCombinedFragment
+   * @generated
+   */
+  EClass getSDEditCombinedFragment();
+
+  /**
+   * Returns the meta object for the attribute list '{@link sdedit.sDELang.SDEditCombinedFragment#getCondComment <em>Cond Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Cond Comment</em>'.
+   * @see sdedit.sDELang.SDEditCombinedFragment#getCondComment()
+   * @see #getSDEditCombinedFragment()
+   * @generated
+   */
+  EAttribute getSDEditCombinedFragment_CondComment();
+
+  /**
+   * Returns the meta object for class '{@link sdedit.sDELang.SDEditAlt <em>SD Edit Alt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SD Edit Alt</em>'.
+   * @see sdedit.sDELang.SDEditAlt
+   * @generated
+   */
+  EClass getSDEditAlt();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link sdedit.sDELang.SDEditAlt#getConseq <em>Conseq</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Conseq</em>'.
+   * @see sdedit.sDELang.SDEditAlt#getConseq()
+   * @see #getSDEditAlt()
+   * @generated
+   */
+  EReference getSDEditAlt_Conseq();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link sdedit.sDELang.SDEditAlt#getAlters <em>Alters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Alters</em>'.
+   * @see sdedit.sDELang.SDEditAlt#getAlters()
+   * @see #getSDEditAlt()
+   * @generated
+   */
+  EReference getSDEditAlt_Alters();
+
+  /**
+   * Returns the meta object for class '{@link sdedit.sDELang.SDEditLoop <em>SD Edit Loop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SD Edit Loop</em>'.
+   * @see sdedit.sDELang.SDEditLoop
+   * @generated
+   */
+  EClass getSDEditLoop();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link sdedit.sDELang.SDEditLoop#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see sdedit.sDELang.SDEditLoop#getBody()
+   * @see #getSDEditLoop()
+   * @generated
+   */
+  EReference getSDEditLoop_Body();
+
+  /**
+   * Returns the meta object for class '{@link sdedit.sDELang.SDEditOpt <em>SD Edit Opt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SD Edit Opt</em>'.
+   * @see sdedit.sDELang.SDEditOpt
+   * @generated
+   */
+  EClass getSDEditOpt();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link sdedit.sDELang.SDEditOpt#getOpts <em>Opts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Opts</em>'.
+   * @see sdedit.sDELang.SDEditOpt#getOpts()
+   * @see #getSDEditOpt()
+   * @generated
+   */
+  EReference getSDEditOpt_Opts();
+
+  /**
+   * Returns the factory that creates the instances of the model.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the factory that creates the instances of the model.
+   * @generated
+   */
+  SDELangFactory getSDELangFactory();
+
+  /**
+   * <!-- begin-user-doc -->
+   * Defines literals for the meta objects that represent
+   * <ul>
+   *   <li>each class,</li>
+   *   <li>each feature of each class,</li>
+   *   <li>each enum,</li>
+   *   <li>and each data type</li>
+   * </ul>
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  interface Literals
+  {
+    /**
+     * The meta object literal for the '{@link sdedit.sDELang.impl.SDEditModelImpl <em>SD Edit Model</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see sdedit.sDELang.impl.SDEditModelImpl
+     * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditModel()
+     * @generated
+     */
+    EClass SD_EDIT_MODEL = eINSTANCE.getSDEditModel();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SD_EDIT_MODEL__ELEMENTS = eINSTANCE.getSDEditModel_Elements();
+
+    /**
+     * The meta object literal for the '{@link sdedit.sDELang.impl.SDEditObjImpl <em>SD Edit Obj</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see sdedit.sDELang.impl.SDEditObjImpl
+     * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditObj()
+     * @generated
+     */
+    EClass SD_EDIT_OBJ = eINSTANCE.getSDEditObj();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SD_EDIT_OBJ__NAME = eINSTANCE.getSDEditObj_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SD_EDIT_OBJ__TYPE = eINSTANCE.getSDEditObj_Type();
+
+    /**
+     * The meta object literal for the '{@link sdedit.sDELang.impl.SDEditCombinableDiagEltImpl <em>SD Edit Combinable Diag Elt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see sdedit.sDELang.impl.SDEditCombinableDiagEltImpl
+     * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditCombinableDiagElt()
+     * @generated
+     */
+    EClass SD_EDIT_COMBINABLE_DIAG_ELT = eINSTANCE.getSDEditCombinableDiagElt();
+
+    /**
+     * The meta object literal for the '{@link sdedit.sDELang.impl.SDEditCallImpl <em>SD Edit Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see sdedit.sDELang.impl.SDEditCallImpl
+     * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditCall()
+     * @generated
+     */
+    EClass SD_EDIT_CALL = eINSTANCE.getSDEditCall();
+
+    /**
+     * The meta object literal for the '<em><b>Caller</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SD_EDIT_CALL__CALLER = eINSTANCE.getSDEditCall_Caller();
+
+    /**
+     * The meta object literal for the '<em><b>Return Message</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SD_EDIT_CALL__RETURN_MESSAGE = eINSTANCE.getSDEditCall_ReturnMessage();
+
+    /**
+     * The meta object literal for the '<em><b>Called</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SD_EDIT_CALL__CALLED = eINSTANCE.getSDEditCall_Called();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SD_EDIT_CALL__NAME = eINSTANCE.getSDEditCall_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SD_EDIT_CALL__PARAMS = eINSTANCE.getSDEditCall_Params();
+
+    /**
+     * The meta object literal for the '{@link sdedit.sDELang.impl.SDEditCombinedFragmentImpl <em>SD Edit Combined Fragment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see sdedit.sDELang.impl.SDEditCombinedFragmentImpl
+     * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditCombinedFragment()
+     * @generated
+     */
+    EClass SD_EDIT_COMBINED_FRAGMENT = eINSTANCE.getSDEditCombinedFragment();
+
+    /**
+     * The meta object literal for the '<em><b>Cond Comment</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SD_EDIT_COMBINED_FRAGMENT__COND_COMMENT = eINSTANCE.getSDEditCombinedFragment_CondComment();
+
+    /**
+     * The meta object literal for the '{@link sdedit.sDELang.impl.SDEditAltImpl <em>SD Edit Alt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see sdedit.sDELang.impl.SDEditAltImpl
+     * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditAlt()
+     * @generated
+     */
+    EClass SD_EDIT_ALT = eINSTANCE.getSDEditAlt();
+
+    /**
+     * The meta object literal for the '<em><b>Conseq</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SD_EDIT_ALT__CONSEQ = eINSTANCE.getSDEditAlt_Conseq();
+
+    /**
+     * The meta object literal for the '<em><b>Alters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SD_EDIT_ALT__ALTERS = eINSTANCE.getSDEditAlt_Alters();
+
+    /**
+     * The meta object literal for the '{@link sdedit.sDELang.impl.SDEditLoopImpl <em>SD Edit Loop</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see sdedit.sDELang.impl.SDEditLoopImpl
+     * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditLoop()
+     * @generated
+     */
+    EClass SD_EDIT_LOOP = eINSTANCE.getSDEditLoop();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SD_EDIT_LOOP__BODY = eINSTANCE.getSDEditLoop_Body();
+
+    /**
+     * The meta object literal for the '{@link sdedit.sDELang.impl.SDEditOptImpl <em>SD Edit Opt</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see sdedit.sDELang.impl.SDEditOptImpl
+     * @see sdedit.sDELang.impl.SDELangPackageImpl#getSDEditOpt()
+     * @generated
+     */
+    EClass SD_EDIT_OPT = eINSTANCE.getSDEditOpt();
+
+    /**
+     * The meta object literal for the '<em><b>Opts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SD_EDIT_OPT__OPTS = eINSTANCE.getSDEditOpt_Opts();
+
+  }
+
+} //SDELangPackage

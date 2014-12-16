@@ -1,0 +1,9 @@
+grammar featureSeqDiag.sdcombin.SDC_language with org.eclipse.xtext.common.Terminals
+
+generate sDC_language "http://www.sdcombin.featureSeqDiag/SDC_language"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

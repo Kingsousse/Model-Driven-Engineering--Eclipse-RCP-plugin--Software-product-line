@@ -1,0 +1,9 @@
+ihm:IHM[a]
+controller:Controller[a]
+mDB:MachineDB[a]
+
+  
+  
+  
+ihm:controller.EntryPassword(password)
+controller:mDB.VerifiePassword(password)

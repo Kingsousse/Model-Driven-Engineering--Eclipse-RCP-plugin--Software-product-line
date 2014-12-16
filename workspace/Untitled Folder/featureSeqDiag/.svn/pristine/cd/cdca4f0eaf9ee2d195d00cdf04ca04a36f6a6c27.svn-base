@@ -1,0 +1,127 @@
+/**
+ * 
+ */
+package featureseqdiag.services;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+import de.ovgu.featureide.fm.core.Feature;
+import runnerSD.SdelRunner;
+import sdcombin.sDCLang.SequenceProg;
+
+/**
+ * @author O. EL ABED
+ * @author R. AHMAD
+ * 
+ */
+public class SDGenerator {
+
+	/**
+	 * 
+	 */
+
+	private static HashMap<String, FileSDeditFeat> listSDFile;
+	private static HashMap<String, Feature> selectedFeatures;
+	private static SequenceProg SysComb;
+	private static String pathFeatures;
+	private static String SDFileName;
+	private static String separator;
+	private static Feature fRoot;
+	private static ArrayList<ModelOfFSelected> modeList;
+
+	public static String unifyingSDfile(SequenceProg Sc, String pathF,
+			String SDF, String sep, Feature fR,
+			ArrayList<ModelOfFSelected> mList,HashMap<String, Feature> selcFeats) {
+
+		SysComb = Sc;
+		pathFeatures = pathF;
+		SDFileName = SDF;
+		separator = sep;
+		fRoot = fR;
+		modeList = mList;
+		selectedFeatures=selcFeats;
+		String sdFinal = "";
+
+		// Create Liste of file .sdel associated with Feature
+		String error = "";
+		error = listSDFileManager();
+
+		if (error == "") {
+			// Traitement du fichier sdedit
+
+			sdFinal += "# TRUUUUUUUUUUUE\n";
+
+			// Fin Traitement du fichier sdedit
+		} else {
+			sdFinal += error;
+		}
+
+		return sdFinal;
+
+	}
+
+	public static String listSDFileManager() {
+		String errorResponse = "";
+		Set<String> cles = selectedFeatures.keySet();
+		Iterator<String> it = cles.iterator();
+		//
+		File featDir = new File(pathFeatures);
+		File[] listDirFeatsFile = featDir.listFiles();
+		String[] listDirFeats = featDir.list();
+		//
+		while(it.hasNext()) {
+			String key = it.next();
+			errorResponse+="\n"+key;
+			int j;
+			for (j = 0; j < listDirFeats.length; j++) {
+				if (listDirFeatsFile[j].isDirectory()
+						&& selectedFeatures.get(key).getName().equals(listDirFeats[j])) {
+
+					// traitment associé à l'ajout du discripteur du fichier
+					File featjDir = listDirFeatsFile[j];
+
+					if (featjDir.list().length != 0) {
+
+						int k;
+						for (k = 0; k < featjDir.list().length; k++) {
+							if ((featjDir.list())[k].endsWith(".sdel")) {
+//								errorResponse+="\n"+(featjDir.list())[k];
+//								String pathFetSdel=pathFeatures+separator+selectedFeatures.get(key).getName()+separator+(featjDir.list())[k];
+//								listSDFile.put(selectedFeatures.get(key).getName(), new FileSDeditFeat(new File(pathFetSdel), SdelRunner.ParseSDELProgram(pathFetSdel)));
+								break;
+							}
+						}
+//						 if(k==featjDir.list().length){
+//						 errorResponse+="# Error generating "+SDFileName+":\n";
+//						 errorResponse+="# "+selectedFeatures.get(key).getName()+" Directory can NOT FOUND sdedit '.sdel' File in\n";
+//						 }
+					}
+					 break;
+					 }
+				}
+//				 if(j==featDir.list().length){
+//				 errorResponse+="# Error generating "+SDFileName+":\n";
+//				 errorResponse+="# "+selectedFeatures.get(key).getName()+" Directory NOT FOUND\n";
+//				 errorResponse+="# "+selectedFeatures.get(key).getName()+" Directory can NOT FOUND sdedit '.sdel' File in\n";
+//			}
+		}
+
+		return errorResponse;
+	}
+	
+	
+	//parcouri HashMap
+//	Map map = new HashMap();
+//	map = initialiserMap();
+//	Set cles = map.keySet();
+//	Iterator it = cles.iterator();
+//	while (it.hasNext()){
+//	   Object cle = it.next(); // tu peux typer plus finement ici
+//	   Object valeur = map.get(cle); // tu peux typer plus finement ici
+//	}
+
+}

@@ -1,0 +1,55 @@
+grammar sdedit.SDELang with org.eclipse.xtext.common.Terminals
+
+
+
+generate sDELang "http://www.SDELang.sdedit"
+
+
+SDEditModel:
+    elements+=SDEditObj+
+    elements+=SDEditCombinableDiagElt*
+;
+
+SDEditObj:
+    name=ID ':' type=ID ('['('a'|'p'|'r'|'x')']')?
+;
+
+SDEditCombinableDiagElt:
+    SDEditCall|
+    SDEditCombinedFragment
+;
+
+SDEditCall:
+    caller=ID ':'(returnMessage=ID '=')? called=ID '.' name=ID '(' 
+    								(params+=ID
+                                    (','params+=ID)*)?
+                                    ')'
+;
+
+SDEditCombinedFragment:
+     SDEditAlt|
+     SDEditLoop|
+     SDEditOpt
+;
+
+SDEditAlt:
+    '[c:alt' (condComment+=ID)+ ']'
+       conseq+= SDEditCombinableDiagElt+
+    ('--[else]'
+      alters+=SDEditCombinableDiagElt+)+     
+    '[/c]'
+;
+
+SDEditLoop:
+    '[c:loop' (condComment+=ID)+ ']'
+       body+= SDEditCombinableDiagElt+
+    '[/c]'
+;
+
+SDEditOpt:
+    '[c:opt' (condComment+=ID)+ ']'
+        opts+= SDEditCombinableDiagElt+
+    '[/c]'
+;
+
+terminal SL_COMMENT 	: '#' !('\n'|'\r')* ('\r'? '\n')?;

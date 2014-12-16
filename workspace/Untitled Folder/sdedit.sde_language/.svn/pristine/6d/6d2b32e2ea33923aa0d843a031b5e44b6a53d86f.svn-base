@@ -1,0 +1,149 @@
+/**
+ */
+package sdedit.sDELang;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>SD Edit Call</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link sdedit.sDELang.SDEditCall#getCaller <em>Caller</em>}</li>
+ *   <li>{@link sdedit.sDELang.SDEditCall#getReturnMessage <em>Return Message</em>}</li>
+ *   <li>{@link sdedit.sDELang.SDEditCall#getCalled <em>Called</em>}</li>
+ *   <li>{@link sdedit.sDELang.SDEditCall#getName <em>Name</em>}</li>
+ *   <li>{@link sdedit.sDELang.SDEditCall#getParams <em>Params</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see sdedit.sDELang.SDELangPackage#getSDEditCall()
+ * @model
+ * @generated
+ */
+public interface SDEditCall extends SDEditCombinableDiagElt
+{
+  /**
+   * Returns the value of the '<em><b>Caller</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Caller</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Caller</em>' attribute.
+   * @see #setCaller(String)
+   * @see sdedit.sDELang.SDELangPackage#getSDEditCall_Caller()
+   * @model
+   * @generated
+   */
+  String getCaller();
+
+  /**
+   * Sets the value of the '{@link sdedit.sDELang.SDEditCall#getCaller <em>Caller</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Caller</em>' attribute.
+   * @see #getCaller()
+   * @generated
+   */
+  void setCaller(String value);
+
+  /**
+   * Returns the value of the '<em><b>Return Message</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Return Message</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Return Message</em>' attribute.
+   * @see #setReturnMessage(String)
+   * @see sdedit.sDELang.SDELangPackage#getSDEditCall_ReturnMessage()
+   * @model
+   * @generated
+   */
+  String getReturnMessage();
+
+  /**
+   * Sets the value of the '{@link sdedit.sDELang.SDEditCall#getReturnMessage <em>Return Message</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Return Message</em>' attribute.
+   * @see #getReturnMessage()
+   * @generated
+   */
+  void setReturnMessage(String value);
+
+  /**
+   * Returns the value of the '<em><b>Called</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Called</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Called</em>' attribute.
+   * @see #setCalled(String)
+   * @see sdedit.sDELang.SDELangPackage#getSDEditCall_Called()
+   * @model
+   * @generated
+   */
+  String getCalled();
+
+  /**
+   * Sets the value of the '{@link sdedit.sDELang.SDEditCall#getCalled <em>Called</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Called</em>' attribute.
+   * @see #getCalled()
+   * @generated
+   */
+  void setCalled(String value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see sdedit.sDELang.SDELangPackage#getSDEditCall_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link sdedit.sDELang.SDEditCall#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Params</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Params</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Params</em>' attribute list.
+   * @see sdedit.sDELang.SDELangPackage#getSDEditCall_Params()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getParams();
+
+} // SDEditCall

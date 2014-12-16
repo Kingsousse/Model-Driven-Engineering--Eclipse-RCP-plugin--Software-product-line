@@ -1,0 +1,101 @@
+/**
+ * 
+ */
+package featureseqdiag.services;
+
+import java.io.File;
+import java.util.HashMap;
+
+import de.ovgu.featureide.fm.core.Feature;
+import sdcombin.sDCLang.SequenceProg;
+
+/**
+ * @author O. EL ABED
+ * @author R. AHMAD
+ * 
+ */
+public class SDGenerator {
+
+	/**
+	 * 
+	 */
+
+	private static HashMap<String, File> listSDFile;
+	private static SequenceProg SysComb;
+	private static String pathFeatures;
+	private static String SDFileName;
+	private static String separator;
+	private static Feature fRoot;
+	
+
+	public static String unifyingSDfile(SequenceProg Sc,
+			String pathF, String SDF, String sep, Feature fR) {
+		SysComb=Sc;
+		pathFeatures=pathF;
+		SDFileName= SDF;
+		separator=sep;
+		fRoot=fR;
+		String sdFinal = "";
+		String error ="";
+		error= listSDFileManager(SysComb,pathFeatures,SDFileName,separator);
+		
+		
+		
+		if(error==""){
+		//Traitement du fichier sdedit
+			
+			sdFinal+="# TRUUUUUUUUUUUE\n";
+			
+			
+		//Fin Traitement du fichier sdedit	
+		}else{
+			sdFinal+=error;
+		}
+				
+		return sdFinal;
+
+	}
+
+	
+	
+	public static String listSDFileManager(SequenceProg SysComb,String pathFeatures, String SDFileName,String separator){
+		String errorResponse="";
+		File featDir=new File(pathFeatures);
+		File[] listDirFeatsFile=featDir.listFiles();
+		String[] listDirFeats=featDir.list();
+		for(int i=0;i<SysComb.getFeatures().size();i++){
+			 int j;
+			 
+			for(j=0;j<listDirFeats.length;j++){
+				if(listDirFeatsFile[j].isDirectory() && SysComb.getFeatures().get(i).getName().equals(listDirFeats[j])){
+					errorResponse+=listDirFeats[j]+"\n";
+//					//traitment associé à l'ajout du discripteur du fichier
+//					File featjDir=new File(pathFeatures+separator+(featDir.list())[j]);
+//					
+//					if(featjDir.list().length!=0){
+//						int k;
+//						for ( k=0;k<featjDir.list().length;k++){
+//							if((featjDir.list())[k].equals(SysComb.getFeatures().get(i).getName()+".sdel")){
+//								listSDFile.put(SysComb.getFeatures().get(i).getName(), (featjDir.listFiles())[k]);
+//								break;
+//							}
+//						}
+//						if(k==featjDir.list().length){
+//							errorResponse+="# Error generating "+SDFileName+":\n";
+//							errorResponse+="# "+SysComb.getFeatures().get(i).getName()+" sdedit '.sdel' File NOT FOUND in Directoy\n";
+//						}
+//					}
+//					break;
+//				}
+			}
+//			if(j==featDir.list().length){
+//				errorResponse+="# Error generating "+SDFileName+":\n";
+//				errorResponse+="# "+SysComb.getFeatures().get(i).getName()+" Directory IS EMPTY\n";
+//				errorResponse+="# "+SysComb.getFeatures().get(i).getName()+" Directory can NOT FOUND sdedit '.sdel' File in\n";
+			}
+		}
+		
+		return errorResponse;
+	}
+
+}

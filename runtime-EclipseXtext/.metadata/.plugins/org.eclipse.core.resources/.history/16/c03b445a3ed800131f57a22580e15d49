@@ -1,0 +1,4 @@
+
+
+ihm:controller.HelpSession()
+controller:displayPanel.Display(Help)

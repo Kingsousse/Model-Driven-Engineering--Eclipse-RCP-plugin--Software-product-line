@@ -1,0 +1,10 @@
+ihm:IHM[a]
+controller:Controller[a]
+displayPanel:Displaypanel[a]
+mDB:MachineDB[a]
+prodController:ProductController[a]
+
+ihm:controller.ChooseProduct(IDproduct)
+controller:ProductAvailable=mDB.CheckProductAvailability(IDproduct)
+controller:displayPanel.Display(Price,PreparingProd)
+controller:prodController.DispenseProduct(ID)

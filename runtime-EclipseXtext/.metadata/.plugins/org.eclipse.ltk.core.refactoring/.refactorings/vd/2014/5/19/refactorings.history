@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SysCombin.sdc&apos; to &apos;VendingMachine&apos;&#x0D;&#x0A;- Original project: &apos;vd&apos;&#x0D;&#x0A;- Destination element: &apos;VendingMachine&apos;&#x0D;&#x0A;- Original element: &apos;SysCombin.sdc&apos;" description="Copy file" element1="features/ChossingProduct/SysCombin.sdc" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1399723025383" target="/VendingMachin/features/VendingMachine" units="0" version="1.0"/>
+</session>

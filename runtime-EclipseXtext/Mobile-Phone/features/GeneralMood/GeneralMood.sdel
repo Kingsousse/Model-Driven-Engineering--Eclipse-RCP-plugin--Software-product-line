@@ -1,0 +1,13 @@
+User:user 
+PhoneKeypad:phonekeypad
+PhoneSpeaker:phonespeaker 
+PhoneDisplay:phonedisplay
+Phone:phone
+PhoneMemory:phonememory
+
+
+User:PhoneKeypad.PushSelect(GeneralModeIsSelected)
+PhoneKeypad:Phone.InputPushSelect(GeneralModeIsSelected)
+Phone:PhoneMemory.GetGeneralModeSettings()
+Phone:PhoneSpeaker.GetGeneraltMode(SoundON)
+Phone:PhoneDisplay.Display(GeneralMode)

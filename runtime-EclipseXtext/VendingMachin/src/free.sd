@@ -1,0 +1,4 @@
+controller:Controller[a]
+displayPanel:Displaypanel[a]
+
+controller:displayPanel.Display(Free)

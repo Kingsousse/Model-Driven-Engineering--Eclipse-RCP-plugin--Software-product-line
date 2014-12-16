@@ -1,0 +1,32 @@
+package featureSeqDiag.sdcombin.runner;
+
+import featureSeqDiag.sdcombin.sDC_language.SequenceProg;
+
+public class SdcRunner {
+
+	
+	public static SequenceProg ParseSDCProgram(String uri){
+
+    	new SDCLangStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
+        ResourceSet resourceSet = new ResourceSetImpl();
+        
+        File profileUrl = new File(uri);
+        java.net.URI javaURI = profileUrl.toURI();
+        URI emfURI = URI.createURI(javaURI.toString());
+        
+        //Resource resource = resourceSet.getResource(URI.createURI(uri,true),true);
+        Resource resource = resourceSet.getResource(emfURI,true);
+        
+        
+        EObject eobject = resource.getContents().get(0); // récupération de la racine de l'arbre syntaxique du programme
+        
+        SequenceProg SequProgramme = (SequenceProg) eobject;
+               
+        return SequProgramme;
+    }
+	public static void main(String[] args) {
+		
+
+	}
+
+}

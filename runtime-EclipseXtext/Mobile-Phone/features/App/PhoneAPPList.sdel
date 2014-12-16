@@ -1,0 +1,12 @@
+User:user 
+PhoneKeypad:phonekeypad
+PhoneSpeaker:phonespeaker 
+PhoneDisplay:phonedisplay
+Phone:phone
+PhoneMemory:phonememory
+Network:network
+
+User:PhoneKeypad.PushSelect(AppIsSelected)
+PhoneKeypad:Phone.InputPushSelect(AppIsSelected)
+Phone:AppList=PhoneMemory.GetAppList()
+Phone:AppList=PhoneDisplay.DisplayAppList()

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.eclipse.ui.IObjectActionDelegate"/>
+<fullyQualifiedTypeName name="org.eclipse.swt.widgets.Shell"/>
+<fullyQualifiedTypeName name="org.eclipse.core.resources.IFile"/>
+<fullyQualifiedTypeName name="org.eclipse.core.runtime.IPath"/>
+<fullyQualifiedTypeName name="org.eclipse.jface.viewers.IStructuredSelection"/>
+<fullyQualifiedTypeName name="org.eclipse.jface.dialogs.MessageDialog"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="featureSeqDiag.sdcombin.sDC_language.SequenceProg"/>
+<fullyQualifiedTypeName name="java.net.URI"/>
+<fullyQualifiedTypeName name="featureSeqDiag.sdedit.sD_language.SDEditModel"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.impl.ResourceSetImpl"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.ResourceSet"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.common.util.URI"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
+<fullyQualifiedTypeName name="featureSeqDiag.sdcombin.runner.SdcRunner"/>
+<fullyQualifiedTypeName name="featureSeqDiag.sdedit.runner.SdRunner"/>
+<fullyQualifiedTypeName name="featureseqdiag.FeatureSDComposer"/>
+<fullyQualifiedTypeName name="org.eclipse.core.runtime.Platform"/>
+<fullyQualifiedTypeName name="featureseqdiag.services.CombinationCleaner"/>
+<fullyQualifiedTypeName name="featureseqdiag.services.SDGenerator"/>
+</qualifiedTypeNameHistroy>

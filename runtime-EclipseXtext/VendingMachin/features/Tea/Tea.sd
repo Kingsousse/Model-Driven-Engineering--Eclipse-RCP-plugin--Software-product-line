@@ -1,0 +1,4 @@
+prodController:ProductController[a]
+teaMachine:Teamachine[a] 
+
+prodController:TeaCup=teaMachine.PrepareTea()

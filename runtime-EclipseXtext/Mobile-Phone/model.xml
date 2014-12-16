@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and mandatory="true" name="Phone">
+				<or mandatory="true" name="Settings">
+					<feature mandatory="true" name="SilentMood"/>
+					<feature mandatory="true" name="GeneralMood"/>
+				</or>
+				<or abstract="true" mandatory="true" name="Call">
+					<feature mandatory="true" name="AnswerPhoneCall"/>
+					<feature mandatory="true" name="ReceiveCall"/>
+				</or>
+				<or name="Application">
+					<or mandatory="true" name="Games">
+						<feature mandatory="true" name="Sudoku"/>
+						<feature mandatory="true" name="Snake"/>
+					</or>
+					<or abstract="true" mandatory="true" name="CameraSystem">
+						<feature mandatory="true" name="Video"/>
+						<feature mandatory="true" name="Photo"/>
+					</or>
+				</or>
+				<alt mandatory="true" name="OS">
+					<feature mandatory="true" name="Android"/>
+					<feature mandatory="true" name="iOS"/>
+					<feature mandatory="true" name="WindowsPhone"/>
+				</alt>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

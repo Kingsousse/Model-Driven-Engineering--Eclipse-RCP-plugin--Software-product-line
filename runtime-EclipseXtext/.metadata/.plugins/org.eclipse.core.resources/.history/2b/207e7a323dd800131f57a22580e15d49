@@ -1,0 +1,16 @@
+Customer:Actor
+ihm:IHM[a]
+controller:Controller[a]
+displayPanel:Displaypanel[a]
+cardcontroller:CardController[a]
+mDB:MachineDB[a]
+coinController:Coincontroller[a] 
+coinsStack:CoinsStack[a]
+prodController:ProductController[a]
+coffeeMachine:Coffemachine[a] 
+teaMachine:Teamachine[a] 
+coldproductStack:ColdproductStack[a]
+
+ihm:controller.InsertCreditCard(card)
+controller:cardcontroller.HandleCreditCardDeposited(card)
+cardcontroller:cardcontroller.VerifieIfSupported()

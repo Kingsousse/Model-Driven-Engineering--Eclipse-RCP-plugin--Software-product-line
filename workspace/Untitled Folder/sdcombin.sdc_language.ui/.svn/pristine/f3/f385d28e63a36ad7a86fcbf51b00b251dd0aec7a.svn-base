@@ -1,0 +1,63 @@
+package runner;
+
+import java.io.File;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import sdcombin.SDCLangStandaloneSetupGenerated;
+import sdcombin.sDCLang.SequenceProg;
+
+
+
+public class SdclRunner {
+	
+	 public static SequenceProg ParseSDCLProgram(String uri){
+
+	    	new SDCLangStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
+	        ResourceSet resourceSet = new ResourceSetImpl();
+	        
+	        File profileUrl = new File(uri);
+	        java.net.URI javaURI = profileUrl.toURI();
+	        URI emfURI = URI.createURI(javaURI.toString());
+	        
+	        //Resource resource = resourceSet.getResource(URI.createURI(uri,true),true);
+	        Resource resource = resourceSet.getResource(emfURI,true);
+	        
+	        
+	        EObject eobject = resource.getContents().get(0); // récupération de la racine de l'arbre syntaxique du programme
+	        
+	        SequenceProg SequProgramme = (SequenceProg) eobject;
+	               
+	        return SequProgramme;
+	    }
+	    
+	    public static void main(String[] args){
+	    	
+	    	SequenceProg sp = ParseSDCLProgram("/media/elabed/EL_ABED3/psar/workspace/sdcombin.sdc_language.ui/src/runner/root.sdcl");
+	    	
+	    	//Statemachine st = ParseLtsProgram("src/test.lts");
+	    	
+//	    	int[] k={1,2,3};
+//	    	int i;
+//	    	for(i=0;i<k.length;i++){
+//	    		System.out.println(k[i]+"\n");
+//	    		if(k[i]==3){
+//	    			break;
+//	    		}
+//	    	}
+//	    	System.out.println("i="+i);
+	    	
+	   
+	    		String result = sp.getContexte().get(0).getSequence().toString();
+		    	System.out.println(result);
+	    	
+	    	System.out.println("\n\n");
+	    	
+	    	
+	    }
+
+}

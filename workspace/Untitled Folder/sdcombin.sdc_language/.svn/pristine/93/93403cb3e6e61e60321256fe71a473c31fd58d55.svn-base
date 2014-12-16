@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/sdcombin.sdc_language/src-gen" editDirectory="/sdcombin.sdc_language.edit/src"
+    editorDirectory="/sdcombin.sdc_language.editor/src" modelPluginID="sdcombin.sdc_language"
+    forceOverwrite="true" modelName="SDCLang" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="sdcombin.sdc_language.edit"
+    editorPluginID="sdcombin.sdc_language.editor" runtimeVersion="2.9">
+  <genPackages prefix="SDCLang" basePackage="sdcombin" disposableProviderFactory="true"
+      fileExtensions="sdcl" ecorePackage="SDCLang.ecore#/">
+    <genClasses ecoreClass="SDCLang.ecore#//SequenceProg">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//SequenceProg/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//SequenceProg/contexte"/>
+    </genClasses>
+    <genClasses ecoreClass="SDCLang.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDCLang.ecore#//Feature/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SDCLang.ecore#//Contexte">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Contexte/objof"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Contexte/sequence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Contexte/alternative"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Contexte/loop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Contexte/option"/>
+    </genClasses>
+    <genClasses ecoreClass="SDCLang.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDCLang.ecore#//Condition/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="SDCLang.ecore#//Loop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Loop/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Loop/contexte"/>
+    </genClasses>
+    <genClasses ecoreClass="SDCLang.ecore#//Sequence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Sequence/objofR"/>
+    </genClasses>
+    <genClasses ecoreClass="SDCLang.ecore#//Alternative">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Alternative/conditionAlt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Alternative/contexteIF"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Alternative/contexteELSE"/>
+    </genClasses>
+    <genClasses ecoreClass="SDCLang.ecore#//Option">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Option/conditionOpt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDCLang.ecore#//Option/contexte"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

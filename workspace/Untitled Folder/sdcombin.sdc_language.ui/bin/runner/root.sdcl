@@ -1,0 +1,10 @@
+Features {
+	cancel;
+	paiement;
+	boisson;
+	
+}
+
+Combination {
+	loop[" while UserDisire == TRUE "](paiement seq(cancel alt ["appuyer_Annuler  IS True"] boisson))
+}

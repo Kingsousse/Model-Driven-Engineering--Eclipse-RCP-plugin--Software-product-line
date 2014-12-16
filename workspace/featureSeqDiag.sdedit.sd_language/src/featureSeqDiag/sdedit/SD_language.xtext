@@ -1,0 +1,67 @@
+grammar featureSeqDiag.sdedit.SD_language with org.eclipse.xtext.common.Terminals
+
+generate sD_language "http://www.sdedit.featureSeqDiag/SD_language"
+
+SDEditModel:
+    (elements+=SDEditObj)*
+    (elements+=SDEditCombinableDiagElt)*
+;
+
+SDEditObj:
+    objName=SDEditObjname ':' type=ID ('['('a'|'p'|'r'|'x')']')?
+;
+
+SDEditObjname:
+	name=ID
+;
+
+SDEditCombinableDiagElt:
+    SDEditCall|
+    SDEditCombinedFragment
+;
+
+SDEditCall:
+    caller=[SDEditObjname] ':'(returnMessage=ID '=')? called=[SDEditObjname] '.' name=ID '(' 
+    								(params=ID
+                                    (','paramLists+=ID)*)?
+                                    ')'
+;
+
+SDEditCombinedFragment:
+     SDEditAlt|
+     SDEditLoop|
+     SDEditOpt
+;
+
+SDEditAlt:
+    '[c:alt' condAlt=Condition ']'
+       conseq+= SDEditCombinableDiagElt+
+    ('--[else]'
+      (alters+=SDEditCombinableDiagElt)*)+     
+    '[/c]'
+;
+
+SDEditLoop:
+    '[c:loop' condLoop=Condition ']'
+       body+= SDEditCombinableDiagElt+
+    '[/c]'
+;
+
+SDEditOpt:
+    '[c:opt' condOpt=Condition ']'
+        opts+= SDEditCombinableDiagElt+
+    '[/c]'
+;
+Condition:
+	(condLeft+=ConditionElm)+ (conlistRight+=ConditionlistRight)*
+;
+ConditionlistRight:
+	('IS NOT'|'IS'|'!='|'=='|'<'|'>'|'<='|'>='|'!'|'||'|'&&'|'and'|'^'|'or') condRight=ConditionElm
+;
+ConditionElm:
+ 
+ 	operandN=INT| operandStr=ID
+
+;
+
+terminal SL_COMMENT 	: '#' !('\n'|'\r')* ('\r'? '\n')?;

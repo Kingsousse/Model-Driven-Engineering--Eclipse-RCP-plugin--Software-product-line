@@ -1,0 +1,3 @@
+ihm:controller.InsertCreditCard(card)
+controller:cardcontroller.HandleCreditCardDeposited(card)
+cardcontroller:cardcontroller.VerifieIfSupported()

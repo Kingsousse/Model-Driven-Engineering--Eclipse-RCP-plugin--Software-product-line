@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and mandatory="true" name="VendingMachine">
+				<or abstract="true" name="Authentification">
+					<feature mandatory="true" name="ProCard"/>
+					<feature mandatory="true" name="Password"/>
+				</or>
+				<alt abstract="true" mandatory="true" name="PayingProcess">
+					<feature mandatory="true" name="free"/>
+					<or abstract="true" mandatory="true" name="money">
+						<feature mandatory="true" name="pieces"/>
+						<feature mandatory="true" name="card"/>
+					</or>
+				</alt>
+				<or mandatory="true" name="ChossingProduct">
+					<feature mandatory="true" name="Cofee"/>
+					<feature mandatory="true" name="Tea"/>
+					<feature mandatory="true" name="ColdProduct"/>
+				</or>
+				<feature name="CancelProcess"/>
+				<feature name="Help"/>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

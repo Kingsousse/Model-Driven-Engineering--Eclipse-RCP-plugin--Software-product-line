@@ -1,0 +1,6 @@
+ihm:IHM[a]
+controller:Controller[a]
+displayPanel:Displaypanel[a]
+
+ihm:Amount=controller.Cancel()
+controller:displayPanel.Display(Cancel)

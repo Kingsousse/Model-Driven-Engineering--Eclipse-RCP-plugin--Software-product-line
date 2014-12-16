@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/featureSeqDiag.sdcombin.sdc_language/src-gen"
+    editDirectory="/featureSeqDiag.sdcombin.sdc_language.edit/src" editorDirectory="/featureSeqDiag.sdcombin.sdc_language.editor/src"
+    modelPluginID="featureSeqDiag.sdcombin.sdc_language" forceOverwrite="true" modelName="SDC_language"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="featureSeqDiag.sdcombin.sdc_language.edit"
+    editorPluginID="featureSeqDiag.sdcombin.sdc_language.editor" runtimeVersion="2.9">
+  <genPackages prefix="SDC_language" basePackage="featureSeqDiag.sdcombin" disposableProviderFactory="true"
+      fileExtensions="sdc" ecorePackage="SDC_language.ecore#/">
+    <genClasses ecoreClass="SDC_language.ecore#//SequenceProg">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//SequenceProg/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//SequenceProg/contexte"/>
+    </genClasses>
+    <genClasses ecoreClass="SDC_language.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDC_language.ecore#//Feature/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SDC_language.ecore#//Contexte">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Contexte/objof"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Contexte/sequence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Contexte/alternative"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Contexte/loop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Contexte/option"/>
+    </genClasses>
+    <genClasses ecoreClass="SDC_language.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDC_language.ecore#//Condition/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="SDC_language.ecore#//Loop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Loop/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Loop/contexte"/>
+    </genClasses>
+    <genClasses ecoreClass="SDC_language.ecore#//Sequence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Sequence/objofR"/>
+    </genClasses>
+    <genClasses ecoreClass="SDC_language.ecore#//Alternative">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Alternative/conditionAlt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Alternative/contexteIF"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Alternative/contexteELSE"/>
+    </genClasses>
+    <genClasses ecoreClass="SDC_language.ecore#//Option">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Option/conditionOpt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDC_language.ecore#//Option/contexte"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

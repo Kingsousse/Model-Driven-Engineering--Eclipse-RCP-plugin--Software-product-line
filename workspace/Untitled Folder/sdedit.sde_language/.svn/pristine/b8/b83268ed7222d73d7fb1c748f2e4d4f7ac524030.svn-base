@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sDELang" nsURI="http://www.SDELang.sdedit" nsPrefix="sDELang">
+  <eClassifiers xsi:type="ecore:EClass" name="SDEditModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDEditObj">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDEditCombinableDiagElt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SDEditCall" eSuperTypes="#//SDEditCombinableDiagElt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caller" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="called" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="params" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDEditCombinedFragment" eSuperTypes="#//SDEditCombinableDiagElt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condComment" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDEditAlt" eSuperTypes="#//SDEditCombinedFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conseq" upperBound="-1"
+        eType="#//SDEditCombinableDiagElt" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alters" upperBound="-1"
+        eType="#//SDEditCombinableDiagElt" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDEditLoop" eSuperTypes="#//SDEditCombinedFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="#//SDEditCombinableDiagElt"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDEditOpt" eSuperTypes="#//SDEditCombinedFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opts" upperBound="-1" eType="#//SDEditCombinableDiagElt"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

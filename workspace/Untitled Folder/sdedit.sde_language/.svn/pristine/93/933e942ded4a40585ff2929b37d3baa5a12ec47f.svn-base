@@ -1,0 +1,389 @@
+/**
+ */
+package sdedit.sDELang.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+
+import sdedit.sDELang.SDELangPackage;
+import sdedit.sDELang.SDEditCall;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>SD Edit Call</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link sdedit.sDELang.impl.SDEditCallImpl#getCaller <em>Caller</em>}</li>
+ *   <li>{@link sdedit.sDELang.impl.SDEditCallImpl#getReturnMessage <em>Return Message</em>}</li>
+ *   <li>{@link sdedit.sDELang.impl.SDEditCallImpl#getCalled <em>Called</em>}</li>
+ *   <li>{@link sdedit.sDELang.impl.SDEditCallImpl#getName <em>Name</em>}</li>
+ *   <li>{@link sdedit.sDELang.impl.SDEditCallImpl#getParams <em>Params</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class SDEditCallImpl extends SDEditCombinableDiagEltImpl implements SDEditCall
+{
+  /**
+   * The default value of the '{@link #getCaller() <em>Caller</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCaller()
+   * @generated
+   * @ordered
+   */
+  protected static final String CALLER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCaller() <em>Caller</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCaller()
+   * @generated
+   * @ordered
+   */
+  protected String caller = CALLER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getReturnMessage() <em>Return Message</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReturnMessage()
+   * @generated
+   * @ordered
+   */
+  protected static final String RETURN_MESSAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getReturnMessage() <em>Return Message</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReturnMessage()
+   * @generated
+   * @ordered
+   */
+  protected String returnMessage = RETURN_MESSAGE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCalled() <em>Called</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCalled()
+   * @generated
+   * @ordered
+   */
+  protected static final String CALLED_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCalled() <em>Called</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCalled()
+   * @generated
+   * @ordered
+   */
+  protected String called = CALLED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getParams() <em>Params</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParams()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> params;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected SDEditCallImpl()
+  {
+    super();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass()
+  {
+    return SDELangPackage.Literals.SD_EDIT_CALL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getCaller()
+  {
+    return caller;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCaller(String newCaller)
+  {
+    String oldCaller = caller;
+    caller = newCaller;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SDELangPackage.SD_EDIT_CALL__CALLER, oldCaller, caller));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getReturnMessage()
+  {
+    return returnMessage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReturnMessage(String newReturnMessage)
+  {
+    String oldReturnMessage = returnMessage;
+    returnMessage = newReturnMessage;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SDELangPackage.SD_EDIT_CALL__RETURN_MESSAGE, oldReturnMessage, returnMessage));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getCalled()
+  {
+    return called;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCalled(String newCalled)
+  {
+    String oldCalled = called;
+    called = newCalled;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SDELangPackage.SD_EDIT_CALL__CALLED, oldCalled, called));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SDELangPackage.SD_EDIT_CALL__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getParams()
+  {
+    if (params == null)
+    {
+      params = new EDataTypeEList<String>(String.class, this, SDELangPackage.SD_EDIT_CALL__PARAMS);
+    }
+    return params;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SDELangPackage.SD_EDIT_CALL__CALLER:
+        return getCaller();
+      case SDELangPackage.SD_EDIT_CALL__RETURN_MESSAGE:
+        return getReturnMessage();
+      case SDELangPackage.SD_EDIT_CALL__CALLED:
+        return getCalled();
+      case SDELangPackage.SD_EDIT_CALL__NAME:
+        return getName();
+      case SDELangPackage.SD_EDIT_CALL__PARAMS:
+        return getParams();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SDELangPackage.SD_EDIT_CALL__CALLER:
+        setCaller((String)newValue);
+        return;
+      case SDELangPackage.SD_EDIT_CALL__RETURN_MESSAGE:
+        setReturnMessage((String)newValue);
+        return;
+      case SDELangPackage.SD_EDIT_CALL__CALLED:
+        setCalled((String)newValue);
+        return;
+      case SDELangPackage.SD_EDIT_CALL__NAME:
+        setName((String)newValue);
+        return;
+      case SDELangPackage.SD_EDIT_CALL__PARAMS:
+        getParams().clear();
+        getParams().addAll((Collection<? extends String>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SDELangPackage.SD_EDIT_CALL__CALLER:
+        setCaller(CALLER_EDEFAULT);
+        return;
+      case SDELangPackage.SD_EDIT_CALL__RETURN_MESSAGE:
+        setReturnMessage(RETURN_MESSAGE_EDEFAULT);
+        return;
+      case SDELangPackage.SD_EDIT_CALL__CALLED:
+        setCalled(CALLED_EDEFAULT);
+        return;
+      case SDELangPackage.SD_EDIT_CALL__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case SDELangPackage.SD_EDIT_CALL__PARAMS:
+        getParams().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SDELangPackage.SD_EDIT_CALL__CALLER:
+        return CALLER_EDEFAULT == null ? caller != null : !CALLER_EDEFAULT.equals(caller);
+      case SDELangPackage.SD_EDIT_CALL__RETURN_MESSAGE:
+        return RETURN_MESSAGE_EDEFAULT == null ? returnMessage != null : !RETURN_MESSAGE_EDEFAULT.equals(returnMessage);
+      case SDELangPackage.SD_EDIT_CALL__CALLED:
+        return CALLED_EDEFAULT == null ? called != null : !CALLED_EDEFAULT.equals(called);
+      case SDELangPackage.SD_EDIT_CALL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SDELangPackage.SD_EDIT_CALL__PARAMS:
+        return params != null && !params.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (caller: ");
+    result.append(caller);
+    result.append(", returnMessage: ");
+    result.append(returnMessage);
+    result.append(", called: ");
+    result.append(called);
+    result.append(", name: ");
+    result.append(name);
+    result.append(", params: ");
+    result.append(params);
+    result.append(')');
+    return result.toString();
+  }
+
+} //SDEditCallImpl

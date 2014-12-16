@@ -1,0 +1,48 @@
+grammar sdcombin.SDCLang with org.eclipse.xtext.common.Terminals
+
+generate sDCLang "http://www.SDCLang.sdcombin"
+
+SequenceProg:
+	('Features {'
+		(features+=Feature)+
+	'}')
+	('Combination {'
+		(contexte+=Contexte)+
+		
+	'}');
+	
+Feature:
+	name=ID 
+;
+
+Contexte:
+	(
+		objof=[Feature] (sequence=Sequence)? |
+		alternative=Alternative |
+		loop=Loop |
+		option=Option
+	)
+		
+	
+;
+
+Condition:
+	condition=STRING
+;
+
+Loop:
+	'loop [' condition=Condition '] {' (contexte+=Contexte)+ '}'
+;
+
+Sequence:
+	('seq' objofR+=[Feature])+ 
+;
+
+Alternative:
+	'alt [' conditionAlt=Condition '] {' ((contexteIF+=Contexte)+)? 'else' ((contexteELSE+=Contexte)+)? '}'
+;
+
+Option:
+	'opt [' conditionOpt=Condition '] {' (contexte+=Contexte)+ '}'
+;
+

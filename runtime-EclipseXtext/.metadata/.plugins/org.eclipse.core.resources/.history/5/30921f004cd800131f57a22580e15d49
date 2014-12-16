@@ -1,0 +1,25 @@
+Features {
+ProCard
+Password
+Help
+Pieces
+CreditCard
+CancelProcess
+}
+
+Combination {
+ProCard
+ seq 
+Password
+loop [" while UserDesire == TRUE "] {
+Pieces
+ seq 
+CreditCard
+alt ["CancelProcess  == True"] {
+CancelProcess
+ else 
+
+}
+
+}
+}

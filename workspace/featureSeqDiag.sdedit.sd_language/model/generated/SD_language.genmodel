@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/featureSeqDiag.sdedit.sd_language/src-gen" editDirectory="/featureSeqDiag.sdedit.sd_language.edit/src"
+    editorDirectory="/featureSeqDiag.sdedit.sd_language.editor/src" modelPluginID="featureSeqDiag.sdedit.sd_language"
+    forceOverwrite="true" modelName="SD_language" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="featureSeqDiag.sdedit.sd_language.edit"
+    editorPluginID="featureSeqDiag.sdedit.sd_language.editor" runtimeVersion="2.9">
+  <genPackages prefix="SD_language" basePackage="featureSeqDiag.sdedit" disposableProviderFactory="true"
+      fileExtensions="sd" ecorePackage="SD_language.ecore#/">
+    <genClasses ecoreClass="SD_language.ecore#//SDEditModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditModel/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//SDEditObj">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditObj/objName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SD_language.ecore#//SDEditObj/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//SDEditObjname">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SD_language.ecore#//SDEditObjname/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//SDEditCombinableDiagElt"/>
+    <genClasses ecoreClass="SD_language.ecore#//SDEditCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditCall/caller"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SD_language.ecore#//SDEditCall/returnMessage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditCall/called"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SD_language.ecore#//SDEditCall/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SD_language.ecore#//SDEditCall/params"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SD_language.ecore#//SDEditCall/paramLists"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//SDEditCombinedFragment"/>
+    <genClasses ecoreClass="SD_language.ecore#//SDEditAlt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditAlt/condAlt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditAlt/conseq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditAlt/alters"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//SDEditLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditLoop/condLoop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditLoop/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//SDEditOpt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditOpt/condOpt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//SDEditOpt/opts"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//Condition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//Condition/condLeft"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//Condition/conlistRight"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//ConditionlistRight">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SD_language.ecore#//ConditionlistRight/condRight"/>
+    </genClasses>
+    <genClasses ecoreClass="SD_language.ecore#//ConditionElm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SD_language.ecore#//ConditionElm/operandN"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SD_language.ecore#//ConditionElm/operandStr"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,190 @@
+/**
+ */
+package sdcombin.sDCLang.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import sdcombin.sDCLang.*;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class SDCLangFactoryImpl extends EFactoryImpl implements SDCLangFactory
+{
+  /**
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public static SDCLangFactory init()
+  {
+    try
+    {
+      SDCLangFactory theSDCLangFactory = (SDCLangFactory)EPackage.Registry.INSTANCE.getEFactory(SDCLangPackage.eNS_URI);
+      if (theSDCLangFactory != null)
+      {
+        return theSDCLangFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new SDCLangFactoryImpl();
+  }
+
+  /**
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SDCLangFactoryImpl()
+  {
+    super();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EObject create(EClass eClass)
+  {
+    switch (eClass.getClassifierID())
+    {
+      case SDCLangPackage.SEQUENCE_PROG: return createSequenceProg();
+      case SDCLangPackage.FEATURE: return createFeature();
+      case SDCLangPackage.CONTEXTE: return createContexte();
+      case SDCLangPackage.CONDITION: return createCondition();
+      case SDCLangPackage.LOOP: return createLoop();
+      case SDCLangPackage.SEQUENCE: return createSequence();
+      case SDCLangPackage.ALTERNATIVE: return createAlternative();
+      case SDCLangPackage.OPTION: return createOption();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SequenceProg createSequenceProg()
+  {
+    SequenceProgImpl sequenceProg = new SequenceProgImpl();
+    return sequenceProg;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Feature createFeature()
+  {
+    FeatureImpl feature = new FeatureImpl();
+    return feature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Contexte createContexte()
+  {
+    ContexteImpl contexte = new ContexteImpl();
+    return contexte;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Condition createCondition()
+  {
+    ConditionImpl condition = new ConditionImpl();
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Loop createLoop()
+  {
+    LoopImpl loop = new LoopImpl();
+    return loop;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Sequence createSequence()
+  {
+    SequenceImpl sequence = new SequenceImpl();
+    return sequence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Alternative createAlternative()
+  {
+    AlternativeImpl alternative = new AlternativeImpl();
+    return alternative;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Option createOption()
+  {
+    OptionImpl option = new OptionImpl();
+    return option;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SDCLangPackage getSDCLangPackage()
+  {
+    return (SDCLangPackage)getEPackage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @deprecated
+   * @generated
+   */
+  @Deprecated
+  public static SDCLangPackage getPackage()
+  {
+    return SDCLangPackage.eINSTANCE;
+  }
+
+} //SDCLangFactoryImpl

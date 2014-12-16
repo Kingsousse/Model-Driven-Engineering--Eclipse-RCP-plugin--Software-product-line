@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/sdedit.sde_language/src-gen" editDirectory="/sdedit.sde_language.edit/src"
+    editorDirectory="/sdedit.sde_language.editor/src" modelPluginID="sdedit.sde_language"
+    forceOverwrite="true" modelName="SDELang" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="sdedit.sde_language.edit"
+    editorPluginID="sdedit.sde_language.editor" runtimeVersion="2.9">
+  <genPackages prefix="SDELang" basePackage="sdedit" disposableProviderFactory="true"
+      fileExtensions="sdel" ecorePackage="SDELang.ecore#/">
+    <genClasses ecoreClass="SDELang.ecore#//SDEditModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDELang.ecore#//SDEditModel/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SDELang.ecore#//SDEditObj">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDELang.ecore#//SDEditObj/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDELang.ecore#//SDEditObj/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SDELang.ecore#//SDEditCombinableDiagElt"/>
+    <genClasses ecoreClass="SDELang.ecore#//SDEditCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDELang.ecore#//SDEditCall/caller"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDELang.ecore#//SDEditCall/returnMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDELang.ecore#//SDEditCall/called"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDELang.ecore#//SDEditCall/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDELang.ecore#//SDEditCall/params"/>
+    </genClasses>
+    <genClasses ecoreClass="SDELang.ecore#//SDEditCombinedFragment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDELang.ecore#//SDEditCombinedFragment/condComment"/>
+    </genClasses>
+    <genClasses ecoreClass="SDELang.ecore#//SDEditAlt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDELang.ecore#//SDEditAlt/conseq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDELang.ecore#//SDEditAlt/alters"/>
+    </genClasses>
+    <genClasses ecoreClass="SDELang.ecore#//SDEditLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDELang.ecore#//SDEditLoop/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SDELang.ecore#//SDEditOpt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDELang.ecore#//SDEditOpt/opts"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

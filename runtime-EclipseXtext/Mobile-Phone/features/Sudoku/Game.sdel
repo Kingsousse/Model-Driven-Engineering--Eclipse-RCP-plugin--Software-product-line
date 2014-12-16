@@ -1,0 +1,27 @@
+User:user 
+PhoneKeypad:phonekeypad
+PhoneSpeaker:phonespeaker 
+PhoneDisplay:phonedisplay
+Phone:phone
+PhoneMemoryCard:phonememoryCard
+Game:game
+Network:network
+
+User:PhoneKeypad.PushSelect(AppGamesIsSelected)
+PhoneKeypad:Phone.InputPushSelect(AppGamesIsSelected)
+Phone:PhoneMemoryCard.GetGameList()
+Phone:PhoneDisplay.DisplayGamesList()
+User:PhoneKeypad.PushSelect(SelectedGame)
+PhoneKeypad:Phone.InputPushSelect(SelectedGame)
+Phone:PhoneMemoryCard.GetGame()
+PhoneMemoryCard:Game.GetGame()
+Phone:PhoneDisplay.Display()
+User:PhoneKeypad.PushSelect()
+PhoneKeypad:Phone.InputPushSelect()
+Phone:GameISReady=Game.JoinGame()
+[c:alt if existing Game]
+	Game:Game.isRady()
+	--[else]
+	Game:Game.StartNewGame()
+[/c]
+Phone:PhoneSpeaker.PlayAPPSound()

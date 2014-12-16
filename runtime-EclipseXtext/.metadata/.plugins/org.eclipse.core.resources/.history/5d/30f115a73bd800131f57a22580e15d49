@@ -1,0 +1,5 @@
+  
+  
+  
+ihm:controller.EntryPassword(password)
+controller:mDB.VerifiePassword(password)

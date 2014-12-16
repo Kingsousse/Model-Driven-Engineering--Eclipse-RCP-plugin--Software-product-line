@@ -1,0 +1,6 @@
+customer:Actor
+ihm:IHM[a]
+
+
+customer:ihm.startBuying()
+customer:ihm.startBuying()

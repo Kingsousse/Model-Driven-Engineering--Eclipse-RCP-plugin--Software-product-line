@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+package featureseqdiag.services;
+
+import java.io.File;
+
+import sdedit.sDELang.SDEditModel;
+
+/**
+ * @author O. EL ABED 
+ * @author R. AHMAD
+ *
+ */
+public class FileSDeditFeat {
+
+	/**
+	 * 
+	 */
+	private File sdFile;
+	private SDEditModel sdModel;
+	
+	
+	public FileSDeditFeat(File sdFile,SDEditModel sdModel) {
+		this.sdFile=sdFile;
+		this.sdModel=sdModel;		
+	}
+
+
+	/**
+	 * @return the sdFile
+	 */
+	public File getSdFile() {
+		return sdFile;
+	}
+
+
+	/**
+	 * @param sdFile the sdFile to set
+	 */
+	public void setSdFile(File sdFile) {
+		this.sdFile = sdFile;
+	}
+
+
+	/**
+	 * @return the sdModel
+	 */
+	public SDEditModel getSdModel() {
+		return sdModel;
+	}
+
+
+	/**
+	 * @param sdModel the sdModel to set
+	 */
+	public void setSdModel(SDEditModel sdModel) {
+		this.sdModel = sdModel;
+	}
+	
+	
+
+}

@@ -1,0 +1,4 @@
+prodController:ProductController[a]
+coffeeMachine:Coffemachine[a] 
+
+prodController:CoffeeCup=coffeeMachine.PrepareCoffee(ID)

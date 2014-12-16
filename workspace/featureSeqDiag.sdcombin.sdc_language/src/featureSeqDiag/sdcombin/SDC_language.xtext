@@ -1,0 +1,48 @@
+grammar featureSeqDiag.sdcombin.SDC_language with org.eclipse.xtext.common.Terminals
+
+generate sDC_language "http://www.sdcombin.featureSeqDiag/SDC_language"
+
+SequenceProg:
+	('Features {'
+		(features+=Feature)+
+	'}')
+	('Combination {'
+		(contexte+=Contexte)+
+		
+	'}');
+	
+Feature:
+	name=ID 
+;
+
+Contexte:
+	(
+		objof=[Feature] (sequence=Sequence)? |
+		alternative=Alternative |
+		loop=Loop |
+		option=Option
+	)
+		
+	
+;
+
+Condition:
+	condition=STRING
+;
+
+Loop:
+	'loop [' condition=Condition '] {' (contexte+=Contexte)+ '}'
+;
+
+Sequence:
+	('seq' objofR+=[Feature])+ 
+;
+
+Alternative:
+	'alt [' conditionAlt=Condition '] {' (contexteIF+=Contexte)* 'else' (contexteELSE+=Contexte)* '}'
+;
+
+Option:
+	'opt [' conditionOpt=Condition '] {' (contexte+=Contexte)+ '}'
+;
+
